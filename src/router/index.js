@@ -19,6 +19,7 @@ import FAQs from '@/components/FAQs.vue'
 import TravelBlog from '@/components/TravelBlog.vue'
 import IslandsMarineAttractions from '@/components/IslandsMarineAttractions.vue'
 import lakesWestlands from '@/components/LakesWestlands.vue'
+import HotelItems from '@/components/HotelItems.vue'
 
 
 const router = createRouter({
@@ -103,6 +104,11 @@ const router = createRouter({
       name:"LakesWestlands",
       path:"/lakeswestlands",
       component:lakesWestlands
+    },
+    {
+      name:'HotelItems',
+      path:'/hotelitems',
+      component:HotelItems
     }
   ],
 })

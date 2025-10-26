@@ -28,10 +28,12 @@ const searchQuery = ref('')
     <v-container>
       <h1 style="text-align: center;"><b>welcome and experience kenya from inland tours to all the way to the
           marines.</b></h1>
-      <v-text style="font-size: 1.2em;">Discover breathtaking destinations that bring nature, culture, and adventure
+      <p style="font-size: 1.2em;">Discover breathtaking destinations that bring nature, culture, and adventure
         together. Explore top spots, hidden gems, and eco-friendly experiences that make every journey
-        unforgettable.</v-text>
-      <br></br>Kenya we create memories.
+        unforgettable.</p>
+
+    <br></br>
+      <h2 style="text-align: center;"><b>Kenya we create memories.</b></h2>
       <br></br>
     </v-container>
     <h1 style="font-size: 2em;
@@ -56,68 +58,62 @@ const searchQuery = ref('')
         <v-col cols="12" md="4">
           <v-card class="image-card">
            <RouterLink to="/islandsmarineattractions"> <v-img src="public/destinations/marine.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">2. Islands & Marine Attractions</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-           <RouterLink to="/sandybeaches"> <v-img src="public/destinations/destination3 (3).png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">3. Sandy Beaches & Coastal Attractions</V-text>
+            <V-text class="image-texts">2. Marine and beach tourism</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
           <RouterLink to="/sceneries" ><v-img src="public/destinations/thomas-bennie-1jlJrr4XGkU-unsplash (1).jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">4. Beautiful Sceneries & Mountains</V-text>
+            <V-text class="image-texts">3. Nature & scenic Tourism</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
             <RouterLink to="/cultures"><v-img src="public/destinations/brian-kungu-kr4A0_7JhSc-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">5. Kenyan cultures</V-text>
+            <V-text class="image-texts">4. Kenyan cultures</V-text>
           </v-card>
         </v-col> 
         <v-col cols="12" md="4">
           <v-card class="image-card">
             <RouterLink to="/historicalsites"><v-img src="public/destinations/pravin-wakode-bhDb6Gd0BVw-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">6. Historical Sites & Monuments</V-text>
+            <V-text class="image-texts">5. Historical Sites & Monuments</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
             <RouterLink to="/adventureoutdooractivities"><v-img src="public/destinations/frantisek-duris-7j-aTZwAB7s-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">7. Adventure & Outdoor Activities (includes adventure sports)</V-text>
+            <V-text class="image-texts">6. Adventure & Outdoor Activities (includes adventure sports)</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
             <RouterLink to="/lakeswestlands"><v-img src="public/destinations/bibhash-polygon-cafe-banerjee-3QPNiZ_Nqjs-unsplash.jpg" height="300px"
                 cover /></RouterLink>
-            <V-text class="image-texts">8. Lakes(inland islands) & Wetlands</V-text>
+            <V-text class="image-texts">7. Lakes(inland islands) & Wetlands</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
           <RouterLink to="/forestsandnaturereserves"><v-img src="public/destinations/man-a-stylist-uQa4DN8HAb0-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">9. Forest & Nature Reserves</V-text>
+            <V-text class="image-texts">8. Forest & Nature Reserves</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
             <RouterLink to="/desertandsemiaridregions"><v-img src="public/destinations/youhana-nassif-yv3NsDUFK7g-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">10. Desert & Semi-Arid Regions</V-text>
+            <V-text class="image-texts">9. Desert tourism</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
            <RouterLink to="/watersportinsagana"><v-img src="public/destinations/watersportinsagana.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">11.Water Sports & Rapids</V-text>
+            <V-text class="image-texts">10.Water Sports & Rapids</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
            <RouterLink to="/ecotourism"><v-img src="public/destinations/ecotourism.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">12. Spiritual & Eco Tourism</V-text>
+            <V-text class="image-texts">11. Spiritual & Eco Tourism</V-text>
           </v-card>
         </v-col>
       </v-row>
