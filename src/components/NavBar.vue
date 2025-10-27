@@ -5,7 +5,7 @@
 <template>
 
   <v-app-bar elevate-on-scroll style="background-color: rgb(242, 223, 223);">
-    <v-app-bar-title icon="public/travelnest1.png">Safari Guide</v-app-bar-title>
+    <v-app-bar-title >Safari Guide</v-app-bar-title>
 
     <v-spacer></v-spacer>
     <v-btn to="/">Home</v-btn>
