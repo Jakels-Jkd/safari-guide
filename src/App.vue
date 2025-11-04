@@ -15,8 +15,6 @@ import NavBar from './components/NavBar.vue'
   <NavBar/>
   <v-main style="background-color: cornsilk;">
     <RouterView></RouterView>
-
-   
   </v-main>
   </v-app> 
 </div>

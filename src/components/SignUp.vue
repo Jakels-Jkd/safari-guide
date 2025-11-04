@@ -31,7 +31,7 @@ import { ref } from 'vue'
                         <v-text-field
                         label="Password_confirmation"
                         variant="outlined"
-                        color="primary"
+                        color="primary" 
                         style="margin-bottom: 2vh;"/>
                     </v-form>
                 </v-card-text>

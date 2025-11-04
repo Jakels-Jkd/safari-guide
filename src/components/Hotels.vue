@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <!-- 🔍 Filter Bar -->
+    <!-- the Filter Bar -->
     <v-container class="mt-6">
       <v-row justify="center">
         <v-col cols="12" md="10">
@@ -389,7 +389,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 25,000–40,000 per night",
   rating:4.3,
-  image:""
+  image:"public/Hotels/coverimages/sarova white sands.png"
 },
 {
   id:43,
@@ -397,7 +397,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 22,000–35,000 per night",
   rating:4.1,
-  image:""
+  image:"public/Hotels/coverimages/voyage beach resort.png"
 },
 {
   id:44,
@@ -405,7 +405,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 12,000–22,000 per night",
   rating:4.0,
-  image:""
+  image:"public/Hotels/coverimages/bahari beach hotel.png"
 },
 {
   id:45,
@@ -416,20 +416,12 @@ export default {
   image:"public/Hotels/coverimages/Sarova Shaba Game Lodge.png"
 },
 {
-  id:46,
-  name:"Nairobi City Breeze Suites",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 1,500–3,000 per night",
-  rating:2.8,
-  image:""
-},
-{
   id:47,
   name:"Khweza Bed & Breakfast",
   location:"Nairobi, Kenya",
   price:"≈ KSh 2,000–4,000 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/Khweza Bed & Breakfast.png"
 },
 {
   id:48,
@@ -437,31 +429,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 3,000–5,000 per night",
   rating:2.9,
-  image:""
-},
-{
-  id:49,
-  name:"Hotel Barkley",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 2,500–4,500 per night",
-  rating:2.8,
-  image:""
-},
-{
-  id:50,
-  name:"Blue Hut Hotel",
-  location:"Diani, Kwale County, Kenya",
-  price:"≈ KSh 3,000–5,000 per night",
-  rating:2.9,
-  image:""
-},
-{
-  id:51,
-  name:"Best Western Mombasa",
-  location:"Mombasa, Kenya",
-  price:"≈ KSh 4,000–6,000 per night",
-  rating:3.0,
-  image:""
+  image:"public/Hotels/coverimages/olive gardens.png"
 },
 {
   id:52,
@@ -472,44 +440,12 @@ export default {
   image:"public/Hotels/coverimages/New Swanga Guest House.png"
 },
 {
-  id:53,
-  name:"Seldom Hotel",
-  location:"Kisumu, Kenya",
-  price:"≈ KSh 2,000–4,000 per night",
-  rating:2.8,
-  image:""
-},
-{
-  id:54,
-  name:"Palm Airport Suites",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 3,000–5,000 per night",
-  rating:2.9,
-  image:""
-},
-{
-  id:55,
-  name:"Nairobi Transit Lounge",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 2,500–4,500 per night",
-  rating:2.8,
-  image:""
-},
-{
-  id:56,
-  name:"Milestone City Hotel",
-  location:"Malindi, Kenya",
-  price:"≈ KSh 2,000–4,000 per night",
-  rating:2.9,
-  image:""
-},
-{
   id:57,
   name:"YWCA Parkview Suites",
   location:"Watamu, Kenya",
   price:"≈ KSh 2,500–4,500 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/YWCA parkview suites.png"
 },
 {
   id:58,
@@ -517,23 +453,7 @@ export default {
   location:"Nakuru, Kenya",
   price:"≈ KSh 3,000–5,000 per night",
   rating:2.9,
-  image:""
-},
-{
-  id:59,
-  name:"Covenant Guest House",
-  location:"Eldoret, Kenya",
-  price:"≈ KSh 2,000–4,000 per night",
-  rating:2.8,
-  image:""
-},
-{
-  id:60,
-  name:"JKIA Airport Hotel",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 2,500–4,500 per night",
-  rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/Sentrim Boulevard Hotel.png"
 },
 {
   id:61,
@@ -541,7 +461,7 @@ export default {
   location:"Malindi, Kenya",
   price:"≈ KSh 2,500–4,500 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/Royal Court hotel.png"
 },
 {
   id:64,
@@ -557,7 +477,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 3,000–5,000 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/tamarind.png"
 },
 {
   id:66,
@@ -565,7 +485,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 2,500–4,000 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/Queens hotel.png"
 },
 {
   id:68,
@@ -573,7 +493,7 @@ export default {
   location:"Nairobi, Kenya",
   price:"≈ KSh 2,000–3,500 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/Lantana Suites.png"
 },
 {
   id:69,
@@ -581,15 +501,7 @@ export default {
   location:"Mombasa, Kenya",
   price:"≈ KSh 3,000–4,500 per night",
   rating:2.9,
-  image:""
-},
-{
-  id:70,
-  name:"Victoria Court Hotel",
-  location:"Watamu, Kenya",
-  price:"≈ KSh 2,500–4,000 per night",
-  rating:2.8,
-  image:""
+  image:"public/Hotels/coverimages/Mombasa Continental Hotel.png"
 }
 
 
@@ -628,7 +540,6 @@ export default {
   z-index: 2;
 }
 
-/* 🏕️ Hotels Cards */
 .hotel-card {
   border-radius: 12px;
   transition: 0.3s;
@@ -637,7 +548,6 @@ export default {
   transform: translateY(-5px);
 }
 
-/* 🎨 Theme Colors */
 .v-btn.primary {
   background-color: rgb(20, 143, 236) !important;
   color: white !important;

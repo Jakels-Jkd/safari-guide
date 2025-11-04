@@ -233,6 +233,6 @@ const searchQuery = ref('')
   transform: scale(1.03);
   /* slightly enlarges the card when hovered */
   z-index: 1;
-  /* keeps the hovered card on top */
+  /*  hovered card remains on top */
 }
 </style>
