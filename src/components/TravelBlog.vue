@@ -3,5 +3,11 @@ import { ref } from 'vue'
 </script>
 
 <template>
-    <h1>cultures</h1>
+    <v-container>
+        <v-row>
+            <v-col>
+                
+            </v-col>
+        </v-row>
+    </v-container>
 </template>

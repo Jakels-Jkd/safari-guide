@@ -28,10 +28,19 @@ import { ref } from 'vue'
                             color="primary"
                             style="margin-bottom: 2vh;"
                         ></v-text-field>
+                        <v-text-field
+                        label="Password_confirmation"
+                        variant="outlined"
+                        color="primary"
+                        style="margin-bottom: 2vh;"/>
                     </v-form>
                 </v-card-text>
                 <v-card-actions style="flex-direction: column; align-items: center;">
-                    <v-btn color="primary" style="margin-bottom: 3px;">Confirm</v-btn>
+                    <v-btn
+                    variant="tonal"
+                     color="blue" 
+                    style="margin-bottom: 3px;"
+                    >Confirm</v-btn>
                     <v-text style="text-align: center; margin-bottom: 2vh;">
                         Already have an account? <a href="/login">Log In</a>
                     </v-text>

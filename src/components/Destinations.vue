@@ -14,11 +14,6 @@ const searchQuery = ref('')
             <v-card-text style="font-size: 1.5em; 
           text-align: center;
            color: aliceblue;">welcome to kenya...Hakuna matata!.</v-card-text>
-            <!-- 🔍 Search Bar -->
-
-            <v-text-field v-model="searchQuery" placeholder="Search..." hide-details solo flat rounded clearable
-              prepend-inner-icon="mdi-magnify" class="search" />
-
           </v-img>
         </v-col>
       </v-row>
@@ -57,13 +52,13 @@ const searchQuery = ref('')
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
-           <RouterLink to="/islandsmarineattractions"> <v-img src="public/destinations/marine.png" height="300px" cover /></RouterLink>
+           <RouterLink to="/marinebeachtourism"> <v-img src="public/destinations/marine.png" height="300px" cover /></RouterLink>
             <V-text class="image-texts">2. Marine and beach tourism</V-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
           <v-card class="image-card">
-          <RouterLink to="/sceneries" ><v-img src="public/destinations/thomas-bennie-1jlJrr4XGkU-unsplash (1).jpg" height="300px" cover /></RouterLink>
+          <RouterLink to="/naturescenictourism" ><v-img src="public/destinations/thomas-bennie-1jlJrr4XGkU-unsplash (1).jpg" height="300px" cover /></RouterLink>
             <V-text class="image-texts">3. Nature & scenic Tourism</V-text>
           </v-card>
         </v-col>

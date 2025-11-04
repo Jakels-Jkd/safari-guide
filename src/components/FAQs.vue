@@ -46,31 +46,31 @@ import { ref } from "vue";
 
 const faqs = ref([
   {
-    question: "What is SafariWay?",
+    question: "What is Safari-Guide?",
     answer:
-      "SafariWay is a web platform that promotes eco-friendly tourism in Kenya by connecting tourists, hotels, and tour companies.",
+      "Safari-guide is a web platform that promotes eco-friendly tourism in Kenya by connecting tourists, hotels, and tour companies.Where you get all necessary information for your visit in Kenya.",
     open: false,
   },
   {
     question: "How can I book a hotel or tour?",
     answer:
-      "You can explore destinations and use the booking links on our Hotels or Tour Companies pages to make reservations directly.",
+      "We provide direct link to the best hotels and the best tour companies just go to the Hotels page and book while for the tour company just go to the page and book now.",
     open: false,
   },
   {
-    question: "Does SafariWay support students?",
+    question: "Can I tour Kenya by myself?",
     answer:
-      "Yes. We provide access to job and internship listings in the tourism and conservation sectors to help students gain experience.",
+      "Yes. We provide the destinations best for visit, with a map if you decide to tour Kenya without need of a tour guide.",
     open: false,
   },
   {
-    question: "Is Safari Guide available for Dcomestic tourists?",
+    question: "Is Safari-Guide available for Domestic tourists?",
     answer:
       "Absolutely! SafariWay is designed for both domestic and international tourists interested in sustainable travel across Kenya.",
     open: false,
   },
   {
-    question: "How does SafariWay promote sustainability?",
+    question: "How does Safari-guide promote sustainability?",
     answer:
       "We highlight eco-friendly travel habits, conservation projects, and local businesses that practice sustainable tourism.",
     open: false,

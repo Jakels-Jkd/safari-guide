@@ -1,42 +1,40 @@
 <script setup>
 import { ref } from 'vue'
-const isLoggedIn = ref(false);
+const isLoggedIn = true;
 </script>
 
-<template>
+<template> 
     <v-container>
         <v-row>
-            <v-col >
-                <v-card class=" katheu" style="margin-top: 10vh;">
-                    <h1 style="text-align: center; font-size: em;">Log In</h1>
-                    <v-card-text>
-                        <v-form>
-                            <v-text-field
-                                label="Email"
-                                type="email"
-                                required
-                            ></v-text-field>
-                            <v-text-field
-                                label="Password"
-                                type="password"
-                                required
-                            ></v-text-field>
-                            <v-row justify="center" class="mt-4">
-                                <v-col cols="12" class="d-flex justify-center">
-                                    <v-btn 
-                                        color="primary" 
-                                        type="submit"
-                                        class="mb-2"
-                                    >Log In</v-btn>
-                                </v-col>
-                                <v-col cols="12" class="d-flex justify-center">
-                                    <v-text class="d-block text-center">
-                                        no account? please <a href="/signup">sign up</a>
-                                    </v-text>
-                                </v-col>
-                            </v-row>
-                        </v-form>
-                        </v-card-text>
+            <v-col>
+                <v-card class="katheu"><v-card-title align="center">Log In</v-card-title>
+                    <v-form justify="center" style="padding: 3vh;">
+                        <v-text-field
+                        label="email"
+                        input="e.g john@example.com"
+                        variant="outlined"
+                        color="primary"
+                        style="margin-bottom: 2vh;"
+                        />
+                        <v-text-field
+                        label="Password"
+                        input="e.g john@example.com"
+                        variant="outlined"
+                        color="primary"
+                       style="margin-bottom: 2vh;"
+                        />
+                    </v-form>
+                <v-card-actions style="flex-direction: column; align-items: center;">
+                     <v-btn
+                    variant="tonal"
+                     color="blue" 
+                    style="margin-bottom: 3px;"
+                    >Confirm</v-btn>
+                    <v-text style="text-align: center; margin-bottom: 2vh;">
+                    Already have an account?  
+                    <a href="/signup">Sign Up</a>
+                    </v-text>
+                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>

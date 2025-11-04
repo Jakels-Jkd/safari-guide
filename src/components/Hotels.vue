@@ -1,14 +1,13 @@
 <template>
   <v-container fluid class="hotels-page pa-0">
-    <!-- 🌅 Hero Section -->
     <div class="hero-section d-flex align-center justify-center">
       <div class="overlay"></div>
       <div class="text-center hero-content">
         <h1 class="text-h3 font-weight-bold white--text mb-2">
           Explore Eco-Friendly Hotels in Kenya
-                      <!-- 🔍 Search Bar -->
+                      <!-- this is the trial Search Bar -->
 
-            <v-text-field v-model="searchQuery" placeholder="Search...,location ,Name" hide-details solo flat rounded clearable
+            <v-text-field v-model="searchQuery" placeholder="Search...,location ,Name eg.Hemingways" hide-details solo flat rounded clearable
               prepend-inner-icon="mdi-magnify" class="search" />
         </h1>
         <p class="white--text text-subtitle-1">
@@ -65,9 +64,18 @@
               <v-btn
                 color="primary"
                 text
-                to="/hotelitems(hotel.id)"
+                @click="viewHotel(hotel.id)"
+                variant="elevated"
               >
                 View Details
+              </v-btn>
+               <v-btn
+                color="primary"
+                text
+                to="/bookings"
+                variant="elevated"
+              >
+                Book Now
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -79,12 +87,12 @@
 
 <script>
 export default {
-  name: "HotelsList",
+  name: "HotelItems",
   data() {
     return {
-      regions: ["Nairobi", "Coast", "Rift Valley", "Central", "Western"],
+      regions: ["Nairobi", "Coast", "Rift Valley", "Central", "Western","Northern"],
       priceRanges: ["< KSh 10,000", "10K - 20K", "20K - 40K", "40K+"],
-      ratings: ["3 Stars", "4 Stars", "5 Stars"],
+      ratings: ["2 Stars","3 Stars", "4 Stars", "5 Stars"],
       hotels: [
         {
           id: 1,
@@ -461,7 +469,7 @@ export default {
   location:"Naivasha, Kenya",
   price:"≈ KSh 1,800–3,500 per night",
   rating:2.9,
-  image:""
+  image:"public/Hotels/coverimages/New Swanga Guest House.png"
 },
 {
   id:53,
@@ -536,28 +544,12 @@ export default {
   image:""
 },
 {
-  id:62,
-  name:"Raha Hotel",
-  location:"Samburu, Kenya",
-  price:"≈ KSh 2,000–3,500 per night",
-  rating:2.8,
-  image:""
-},
-{
-  id:63,
-  name:"Classic Hotel Nairobi",
-  location:"Nairobi, Kenya",
-  price:"≈ KSh 14,000 per night",
-  rating:2.9,
-  image:""
-},
-{
   id:64,
   name:"African Heritage Hotel",
   location:"Naivasha, Kenya",
   price:"≈ KSh 2,500–4,500 per night",
   rating:2.8,
-  image:""
+  image:"public/Hotels/coverimages/African Heritage Hotel.png"
 },
 {
   id:65,
@@ -616,10 +608,9 @@ export default {
 
 
 <style scoped>
-/* 🌅 Hero Section */
 .hero-section {
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-image: url("public/Hotels/hotelspagemain.png");
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -630,7 +621,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(20, 143, 236, 0.5); /* your color with transparency */
+  background: rgba(20, 143, 236, 0.5); 
 }
 .hero-content {
   position: relative;

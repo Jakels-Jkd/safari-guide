@@ -10,16 +10,19 @@ import TourCompanies from '@/components/TourCompanies.vue'
 import SignUp from '@/components/SignUp.vue'
 import LogIn from '@/components/LogIn.vue'
 import UserProfile from '@/components/UserProfile.vue'
-import SandyBeaches from '@/components/SandyBeaches.vue'
-import Cultures from '@/components/Cultures.vue'
-import HistoricalSites from '@/components/HistoricalSites.vue'
-import WildlifeSafaris from '@/components/WildlifeSafaris.vue'
-import Sceneries from '@/components/Sceneries.vue'
+import Cultures from '@/views/Cultures.vue'
+import HistoricalSites from '@/views/HistoricalSites.vue'
+import WildlifeSafaris from '@/views/WildlifeSafaris.vue'
+import NatureScenicTourism from '@/views/NatureScenicTourism.vue'
 import FAQs from '@/components/FAQs.vue'
 import TravelBlog from '@/components/TravelBlog.vue'
-import IslandsMarineAttractions from '@/components/IslandsMarineAttractions.vue'
-import lakesWestlands from '@/components/LakesWestlands.vue'
-import HotelItems from '@/components/HotelItems.vue'
+import lakesWestlands from '@/views/LakesWestlands.vue'
+import HotelItems from '@/views/HotelItems.vue'
+import WSItems from '@/views/WSItems.vue'
+import Conservation from '@/components/Conservation.vue'
+import Bookings from '@/components/booking.vue'
+import MarineBeachTourism from '@/views/MarineBeachTourism.vue'
+
 
 
 const router = createRouter({
@@ -56,9 +59,9 @@ const router = createRouter({
       component:UserProfile
      },
      {
-      name:"SandyBeaches",
-      path:"/sandybeaches",
-      component:SandyBeaches
+      name:"MarineBeachTourism",
+      path:"/marinebeachtourism",
+      component:MarineBeachTourism
      },
      {
       name:"Cultures",
@@ -81,9 +84,9 @@ const router = createRouter({
       component:WildlifeSafaris
      },
           {
-      name:"Sceneries",
-      path:"/sceneries",
-      component:Sceneries
+      name:"NatureScenicTourism",
+      path:"/naturescenictourism",
+      component:NatureScenicTourism
      },
      {
       name:"FAQs",
@@ -95,11 +98,6 @@ const router = createRouter({
       path:"/travelblog",
       component:TravelBlog
      },
-     {
-      name:"IslandsMarineAttractions",
-      path:"/islandsmarineattractions",
-      component:IslandsMarineAttractions
-     },
     {
       name:"LakesWestlands",
       path:"/lakeswestlands",
@@ -109,6 +107,21 @@ const router = createRouter({
       name:'HotelItems',
       path:'/hotelitems',
       component:HotelItems
+    },
+    {
+    name:'WSItem',
+    path:'/wsitems',
+    component:WSItems
+    },
+    {
+    name:'Conservation',
+    path:'/conservation',
+    component:Conservation
+    },
+    {
+    name:'bookings',
+    path:'/bookings',
+    component:Bookings
     }
   ],
 })

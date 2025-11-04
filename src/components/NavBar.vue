@@ -13,7 +13,7 @@
     <v-btn to="/hotels">Hotels</v-btn>
     <v-btn to="/tourcompanies">Tour Companies</v-btn>
     <v-btn to="/travelblog">Travel Blog</v-btn>
-
+    <v-btn to="/conservation">conservation</v-btn>
     <v-btn to="/faqs">FAQs</v-btn>
     <v-btn to="/login">Log In</v-btn>
     <v-avatar to="/userprofile" v-if="isLoggedIn">
