@@ -5,10 +5,14 @@
       <div class="text-center hero-content">
         <h1 class="text-h3 font-weight-bold white--text mb-2">
           Explore Eco-Friendly Hotels in Kenya
-                      <!-- this is the trial Search Bar -->
+                      <!-- trial Search Bar not sure -->
 
-            <v-text-field v-model="searchQuery" placeholder="Search...,location ,Name eg.Hemingways" hide-details solo flat rounded clearable
-              prepend-inner-icon="mdi-magnify" class="search" />
+            <v-text-field 
+            v-model="searchQuery" 
+            placeholder="Search...,location ,Name eg.Hemingways" 
+            hide-details solo flat rounded clearable
+            prepend-inner-icon="mdi-magnify" 
+            class="search" />
         </h1>
         <p class="white--text text-subtitle-1">
           Discover the best lodges, resorts, and camps that care for nature 🌿
@@ -38,7 +42,7 @@
       </v-row>
     </v-container>
 
-    <!-- 🏕️ Hotels Grid -->
+    <!--  Hotels Grid -->
     <v-container class="mt-10">
       <v-row>
         <v-col
