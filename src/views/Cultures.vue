@@ -143,7 +143,7 @@ import { ref } from 'vue'
           <v-img src='public/destinations/cultures/the kamba.png'/>
         </v-col>
 
-        <v-divider color="black" thickness="2" class="my-8" />
+        
 
         <v-col cols="12" md="6">
           <v-img src='public/destinations/cultures/the swahili.png'/>

@@ -72,7 +72,7 @@ import { ref } from 'vue'
            Lamu isn’t just a town — it’s a living memory of the Swahili soul.
           </p>
         </v-col>
-        <div class="divider"></div>
+        
 
         <!--4. Hell’s Gate National Park – Naivasha-->
         <v-col cols="12" md="6">
