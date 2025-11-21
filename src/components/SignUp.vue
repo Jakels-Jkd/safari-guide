@@ -1,68 +1,108 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
+import { registerUser } from "@/services/userServices"; // ✅ Correct import path
+
+// Reactive state
+const username = ref("");
+const email = ref("");
+const password = ref("");
+const password_confirmation = ref("");
+const loading = ref(false);
+
+// Register function
+const register = async () => {
+  loading.value = true;
+  try {
+    const response = await registerUser({
+      name: username.value, // ✅ matches v-model
+      email: email.value,
+      password: password.value,
+      password_confirmation: password_confirmation.value,
+      role_id: 2, // example role
+    });
+
+    console.log("REGISTER SUCCESS:", response.data);
+    // Optionally redirect or show success toast here
+  } catch (err) {
+    console.log("REGISTER ERROR:", err.response?.data || err.message);
+  } finally {
+    loading.value = false;
+  }
+};
 </script>
 
 <template>
   <v-container>
     <v-row>
-        <v-col>
-            <v-card class="katheu" style="margin-top: 10vh;">
-                <v-card-title style="font-weight: bolder; font-size: 1.5em; text-align: center;">Sign Up</v-card-title>
-                <v-card-text>
-                    <v-form>
-                        <v-text-field
-                            label="Username"
-                            variant="outlined"
-                            color="primary"
-                            style="margin-bottom: 2vh;"
-                        ></v-text-field>
-                        <v-text-field
-                            label="Email"
-                            variant="outlined"
-                            color="primary"
-                            style="margin-bottom: 2vh;"
-                        ></v-text-field>
-                        <v-text-field
-                            label="Password"
-                            variant="outlined"
-                            color="primary"
-                            style="margin-bottom: 2vh;"
-                        ></v-text-field>
-                        <v-text-field
-                        label="Password_confirmation"
-                        variant="outlined"
-                        color="primary" 
-                        style="margin-bottom: 2vh;"/>
-                    </v-form>
-                </v-card-text>
-                <v-card-actions style="flex-direction: column; align-items: center;">
-                    <v-btn
-                    variant="tonal"
-                     color="blue" 
-                    style="margin-bottom: 3px;"
-                    >Confirm</v-btn>
-                    <v-text style="text-align: center; margin-bottom: 2vh;">
-                        Already have an account? <a href="/login">Log In</a>
-                    </v-text>
-                </v-card-actions>
-            </v-card>
-        </v-col>
+      <v-col>
+        <v-card class="katheu" style="margin-top: 10vh;">
+          <v-card-title
+            style="text-align: center; font-size: 1.5em; font-weight: bold;"
+          >
+            Sign Up
+          </v-card-title>
+
+          <v-card-text>
+            <v-form @submit.prevent="register">
+              <v-text-field
+                v-model="username"
+                label="Username"
+                variant="outlined"
+                style="margin-bottom: 2vh;"
+              />
+
+              <v-text-field
+                v-model="email"
+                label="Email"
+                variant="outlined"
+                style="margin-bottom: 2vh;"
+              />
+
+              <v-text-field
+                v-model="password"
+                label="Password"
+                type="password"
+                variant="outlined"
+                style="margin-bottom: 2vh;"
+              />
+
+              <v-text-field
+                v-model="password_confirmation"
+                label="Confirm Password"
+                type="password"
+                variant="outlined"
+                style="margin-bottom: 2vh;"
+              />
+
+              <v-btn
+                type="submit"
+                :loading="loading"
+                variant="tonal"
+                color="blue"
+                block
+              >
+                Confirm
+              </v-btn>
+            </v-form>
+          </v-card-text>
+
+          <v-card-actions style="flex-direction: column; align-items: center;">
+            <v-text>
+              Already have an account?
+              <a href="/login">Log In</a>
+            </v-text>
+          </v-card-actions>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
+
 <style scoped>
 .katheu {
-    width: 50%;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-}
-.jam {
-    border-color: blue;
-}
-
-.katheu {
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.7);
+  width: 50%;
+  margin: 0 auto;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
 }
 </style>
