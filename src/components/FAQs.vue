@@ -1,31 +1,37 @@
 <template>
   <v-container class="py-10">
-    <h2 class="text-h4 font-weight-bold text-center mb-8 text-green-darken-3">
+    <h2 :class="['text-h4', 'font-weight-bold', 'mb-8', 'text-green-darken-3', titleAlign]">
       Frequently Asked Questions
     </h2>
 
-    <v-row justify="center">
+    <!-- allow alignment via prop: 'center' (default) or 'left' -->
+    <v-row :justify="rowJustify">
       <v-col cols="12" md="8">
         <!-- Single white card container -->
-        <v-card class="pa-6 rounded-xl" color="white" elevation="3">
+        <v-card class="pa-6 rounded-xl faq-card" color="white" elevation="3">
           <div
             v-for="(faq, index) in faqs"
             :key="index"
             class="py-4"
-            @click="toggle(index)"
           >
-            <div class="d-flex align-center justify-space-between cursor-pointer">
-              <h3 class="text-subtitle-1 font-weight-medium text-green-darken-4">
+            <button
+              class="faq-toggle d-flex align-center justify-space-between cursor-pointer"
+              @click="toggle(index)"
+              :aria-expanded="faq.open"
+              :aria-controls="`faq-${index}`"
+            >
+              <h3 :class="['text-subtitle-1', 'font-weight-medium', 'text-green-darken-4', questionAlign]">
                 {{ faq.question }}
               </h3>
-              <v-icon color="green-darken-3">
+              <v-icon color="green-darken-3" aria-hidden="true">
                 {{ faq.open ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
               </v-icon>
-            </div>
+            </button>
 
             <v-expand-transition>
               <p
                 v-if="faq.open"
+                :id="`faq-${index}`"
                 class="mt-2 text-body-2 text-grey-darken-2"
               >
                 {{ faq.answer }}
@@ -42,7 +48,15 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
+const props = defineProps({
+  align: { type: String, default: 'center' }
+});
+
+const rowJustify = computed(() => (props.align === 'left' ? 'start' : 'center'));
+const titleAlign = computed(() => (props.align === 'left' ? 'text-left' : 'text-center'));
+const questionAlign = computed(() => (props.align === 'left' ? 'text-left' : 'text-left'));
 
 const faqs = ref([
   {
@@ -91,5 +105,19 @@ function toggle(index) {
 }
 .v-card:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+.faq-card {
+  max-width: 100%;
+}
+.faq-toggle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+}
+.faq-toggle:focus {
+  outline: 2px solid rgba(76, 175, 80, 0.25);
+  border-radius: 6px;
 }
 </style>

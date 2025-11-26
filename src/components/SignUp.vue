@@ -1,24 +1,26 @@
 <script setup>
 import { ref } from "vue";
-import { registerUser } from "@/services/userServices"; // ✅ Correct import path
+import { registerUser } from "@/services/userServices"; 
 
-// Reactive state
 const username = ref("");
 const email = ref("");
 const password = ref("");
 const password_confirmation = ref("");
 const loading = ref(false);
 
-// Register function
 const register = async () => {
-  loading.value = true;
+  loading.value = true(
+    
+  );
+
+
   try {
     const response = await registerUser({
-      name: username.value, // ✅ matches v-model
+      name: username.value, 
       email: email.value,
       password: password.value,
       password_confirmation: password_confirmation.value,
-      role_id: 2, // example role
+      role_id: 2, 
     });
 
     console.log("REGISTER SUCCESS:", response.data);
@@ -80,9 +82,21 @@ const register = async () => {
                 variant="tonal"
                 color="blue"
                 block
+                
               >
-                Confirm
+                Confirm    
               </v-btn>
+              <v-router-link to="/home">
+                <v-btn
+                  type="submit"
+                  :loading="loading"
+                  variant="tonal"
+                  color="blue"
+                  block
+                >
+                  Confirm
+                </v-btn>
+                </v-router-link>
             </v-form>
           </v-card-text>
 

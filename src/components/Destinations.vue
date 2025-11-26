@@ -226,13 +226,10 @@ const searchQuery = ref('')
 
 .image-card {
   transition: 0.3s;
-  /* smooth animation for hover */
 }
 
 .image-card:hover {
   transform: scale(1.03);
-  /* slightly enlarges the card when hovered */
   z-index: 1;
-  /*  hovered card remains on top */
 }
 </style>

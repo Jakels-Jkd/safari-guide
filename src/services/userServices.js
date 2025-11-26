@@ -1,10 +1,17 @@
 import api from "@/Apis/api.js";
-// SIGN UP / REGISTER
-export const registerUser = (data) => {
-  return api.post("/register", data);
+
+// REGISTER
+export const registerUser = async (data) => {
+  return await api.post("/register", data);
 };
 
 // LOGIN
-export const loginUser = (data) => {
-  return api.post("/login", data);
+export const loginUser = async (data) => {
+  const response = await api.post("/login", data);
+
+  // Save token & user info
+  localStorage.setItem("token", response.data.token);
+  localStorage.setItem("user", JSON.stringify(response.data.user));
+
+  return response;
 };

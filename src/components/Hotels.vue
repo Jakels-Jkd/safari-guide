@@ -1,79 +1,179 @@
-<!-- src/components/HotelList.vue -->
-<template>
-  <div class="container">
-    <h1>Best Hotels & Safari Lodges in Kenya</h1>
-    <p v-if="hotels.length" class="count">{{ hotels.length }}+ luxury lodges & camps</p>
+<script>
+import { Hotels } from "../router/HotelDetails.js";
 
-    <div v-if="loading" class="loading">Loading real Kenyan lodges...</div>
-    <div v-else-if="error" class="error">{{ error }}</div>
-
-    <div class="grid">
-      <div v-for="hotel in hotels" :key="hotel.id" class="card">
-        <img 
-          :src="hotel.image || 'https://via.placeholder.com/400x250/ECECEC/999?text=No+Image'" 
-          :alt="hotel.name"
-          class="hotel-img"
-        />
-        <div class="info">
-          <h3>{{ hotel.name }}</h3>
-          <p class="location"> {{ hotel.region }} • {{ hotel.location }}</p>
-          
-          <div class="details">
-            <span class="price">{{ hotel.price_range || 'From $180' }}</span>
-            <span class="stars"> {{ hotel.stars || '4.5+' }}</span>
-          </div>
-
-          <p class="desc">{{ truncate(hotel.description, 120) }}</p>
-
-          <a :href="'https://www.safaribookings.com/lodges/' + hotel.slug" 
-             target="_blank" class="btn">View Lodge →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const hotels = ref([])
-const loading = ref(true)
-const error = ref('')
-
-const truncate = (text = '', len = 100) => {
-  return text.length > len ? text.substring(0, len) + '...' : text
-}
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/api/kenya-lodges.php')
-    const data = await response.json()
-    
-    // The API returns { lodges: [...] }
-    hotels.value = data.lodges || []
-  } catch (err) {
-    error.value = 'Failed to load hotels. Check your internet or backend.'
-    console.error(err)
-  } finally {
-    loading.value = false
+export default {
+  name: "Hotels",
+  data() {
+    return {
+      hotels: Hotels
+    };
+  },
+  methods: {
+    viewHotel(id) {
+      this.$router.push({ name: "HotelItems", params: { id } });
+    }
   }
-})
+};
+
+
 </script>
 
+
+  
+  <template>
+  <v-container fluid class="hotels-page pa-0">
+    <div class="hero-section d-flex align-center justify-center">
+      <div class="overlay"></div>
+      <div class="text-center hero-content">
+        <h1 class="text-h3 font-weight-bold white--text mb-2">
+          Explore Eco-Friendly Hotels in Kenya
+                      <!-- trial Search Bar not sure -->
+
+            <v-text-field 
+            v-model="searchQuery" 
+            placeholder="Search...,location ,Name eg.Hemingways" 
+            hide-details solo flat rounded clearable
+            prepend-inner-icon="mdi-magnify" 
+            class="search" />
+        </h1>
+        <p class="white--text text-subtitle-1">
+          Discover the best lodges, resorts, and camps that care for nature 🌿
+        </p>
+      </div>
+    </div>
+
+     the Filter Bar 
+    <v-container class="mt-6">
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <v-card class="pa-4 elevation-2">
+            <v-row>
+              <v-col cols="12" md="4">
+                <v-select label="Region" :items="regions" outlined dense></v-select>
+              </v-col>
+              <v-col cols="12" md="4">
+                <v-select label="Price Range" :items="priceRanges" outlined dense></v-select>
+              </v-col>
+              <v-col cols="12" md="4">
+                <v-select label="Rating" :items="ratings" outlined dense></v-select>
+              </v-col>
+            </v-row>
+            <v-btn color="primary" class="mt-3" block>Search</v-btn>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+
+      Hotels Grid 
+    <v-container class="mt-10">
+      <v-row>
+        <v-col
+          v-for="hotel in hotels"
+          :key="hotel.id"
+          cols="12"
+          sm="6"
+          md="4"
+        >
+          <v-card class="hotel-card" elevation="3">
+            <v-img :src="hotel.image" height="200px"></v-img>
+            <v-card-title class="font-weight-bold">
+              {{ hotel.name }}
+            </v-card-title>
+            <v-card-subtitle class="grey--text">
+              {{ hotel.location }}
+            </v-card-subtitle>
+            <v-card-text>
+              <p>💰 {{ hotel.price }}</p>
+              <p>⭐ {{ hotel.rating }}</p>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn
+                color="primary"
+                text
+                @click="viewHotel(hotel.id)"
+                variant="elevated"
+              >
+                View Details
+              </v-btn>
+               <v-btn
+                color="primary"
+                text
+                to="/bookings"
+                variant="elevated"
+              >
+                Book Now
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-container>
+</template>
+
 <style scoped>
-/* Same beautiful styles as before – copy from my previous message */
-.container { padding: 2rem; max-width: 1300px; margin: 0 auto; text-align: center; }
-.count { color: #27ae60; font-weight: bold; margin-bottom: 1.5rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
-.card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.12); transition: all 0.3s; }
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-.hotel-img { width: 100%; height: 220px; object-fit: cover; }
-.info { padding: 1.3rem; text-align: left; }
-.location { color: #16a085; font-weight: 600; }
-.details { display: flex; justify-content: space-between; margin: 0.8rem 0; font-weight: bold; }
-.price { color: #e74c3c; }
-.btn { background: #f39c12; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 0.5rem; }
-.btn:hover { background: #e67e22; }
-.loading, .error { font-size: 1.3rem; color: #95a5a6; margin: 3rem 0; }
-.error { color: #c0392b; }
+.hero-section {
+  position: relative;
+  background-image: url("public/Hotels/hotelspagemain.png");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 143, 236, 0.5); 
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hotel-card {
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.hotel-card:hover {
+  transform: translateY(-5px);
+}
+
+.v-btn.primary {
+  background-color: rgb(20, 143, 236) !important;
+  color: white !important;
+}
+.main-page{
+    background-color :rgb(31, 117, 183);
+    height: 100%;
+}
+.container{
+    height: 50vh;
+    padding: 0%;
+}
+.image{
+    height:60vh;
+  width: 100%;
+  padding: 0%;
+}
+
+
+.aimee {
+  padding: 0%;
+
+}
+.search {
+  width: 75%;
+  max-width: 100%;
+  background-color: rgb(254, 254, 254);
+  justify-self: center;
+  overlay: auto;
+  opacity: var(170%);
+  border-radius: 60px;
+  height: 4.5em;
+  white-space: initial;
+
+}
 </style>
+
