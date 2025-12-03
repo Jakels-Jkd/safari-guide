@@ -48,7 +48,7 @@ const destinations = [
   { number: "10",
     title: "Water Sports & Rapids",        
     img: "public/CoverImages/watersportinsagana.png",                    
-    link: "/watersportinsagana" 
+    link: "/watersports" 
   },
   { number: "11",  
    title: "Spiritual & Eco Tourism",      

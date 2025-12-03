@@ -1,286 +1,235 @@
+<!-- src/views/LakesWetlands.vue — DESIGN 1: POETIC EARTH (Same soul as Desert & Forests) -->
 <script setup>
 import { ref } from 'vue'
 </script>
 
-
 <template>
-  <div class="page">
-    <div class="nema">
-      <h2 class="title">The Lakes and Westlands</h2>
+  <div class="lakes-page">
+
+    <!-- HERO – Same sacred energy -->
+    <div class="hero">
+      <h2 class="title">LAKES & WETLANDS OF KENYA</h2>
+      <p class="subtitle">Where the Sky Comes Down to Drink</p>
     </div>
 
-    <v-container class="py-10 px-6">
-      <h1 
-        class="display-2 text-center font-weight-bold" 
-        style="text-decoration: underline;"
-      >
-        Explore Lakes & Westlands
+    <v-container class="py-16 px-6">
+      <h1 class="display-3 text-center font-weight-black mb-16" style="text-decoration: underline overline; color:#006064;">
+        Mirrors of Heaven on Earth
       </h1>
-    </v-container>
 
-    <v-container class="py-10 px-6">
-      <v-row class="d-flex align-center">
-
-        <!-- ------------------------------------ -->
-        <!-- 🌊 LAKES SECTION -->
-        <!-- ------------------------------------ -->
-
+      <!-- 1. Lake Nakuru -->
+      <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6">
-          <v-carousel
-            height="500"
-            show-arrows
-            class="rounded-lg elevation-2"
-            hide-delimiter-background
-            cycle interval="3000" pause-on-hover
-          >
-            <v-carousel-item src='public/destinations/lakes/lake-naivasha.jpg'/>
-            <v-carousel-item src='public/destinations/lakes/lake-nakuru.jpg'/>
-            <v-carousel-item src='public/destinations/lakes/lake-victoria.jpg'/>
+          <v-carousel height="520" show-arrows cycle interval="4500" hide-delimiter-background class="rounded-xl elevation-20">
+            <v-carousel-item src="public/lakes/nakuru1.jpg" cover />
+            <v-carousel-item src="public/lakes/nakuru2.jpg" cover />
+            <v-carousel-item src="public/lakes/nakuru3.jpg" cover />
           </v-carousel>
         </v-col>
-
         <v-col cols="12" md="6">
-          <h3 class="card-subtitles">Lakes of Kenya</h3>
+          <h3 class="card-subtitles text-pink-900">1. Lake Nakuru – The Pink Sea</h3>
           <p class="tribe-description">
-            Add your lakes description here.
+            Once home to two million flamingos — a moving pink carpet visible from space. <br>
+            Black rhinos drink beside white pelicans. <br>
+            When the birds rise together, the sky forgets it is sky. <br>
+            This is not a lake. This is a living prayer.
           </p>
         </v-col>
+      </v-row>
+      <v-divider thickness="4" color="#00838f" class="my-12" />
 
-        <v-divider color="black" thickness="2" class="my-8" />
-
-
-        <!-- ------------------------------------ -->
-        <!-- 🏙️ WESTLANDS SECTION -->
-        <!-- ------------------------------------ -->
-
-        <v-col cols="12" md="6">
-          <h3 class="card-subtitles">Westlands – Nairobi’s Urban Gem</h3>
+      <!-- 2. Lake Bogoria -->
+      <v-row class="d-flex align-center my-16">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/lakes/bogoria.jpg" class="rounded-xl elevation-20" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="card-subtitles text-red-900">2. Lake Bogoria – The Boiling Lake</h3>
           <p class="tribe-description">
-            Add your Westlands description here.
+            Over 200 hot springs and geysers erupt from pink soda water. <br>
+            Steam rises like ancestral spirits. <br>
+            The Endorois people still come here to heal. <br>
+            Even the flamingos know this place is sacred.
           </p>
         </v-col>
+      </v-row>
+      <v-divider thickness="4" color="#00838f" class="my-12" />
 
+      <!-- 3. Lake Naivasha -->
+      <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6">
-          <v-img src='public/destinations/westlands/westlands-city.jpg'/>
-        </v-col>
-
-        <v-divider color="black" thickness="2" class="my-8" />
-
-
-        <!-- ------------------------------------ -->
-        <!-- OPTIONALLY ADD MORE LAKES OR TOWNS -->
-        <!-- ------------------------------------ -->
-
-        <v-col cols="12" md="6">
-          <v-img src='public/destinations/lakes/lake-turkana.jpg'/>
-        </v-col>
-
-        <v-col cols="12" md="6">
-          <h3 class="card-subtitles">Lake Turkana</h3>
-          <p class="tribe-description">
-            Add lake description here.
-          </p>
-        </v-col>
-
-        <v-divider color="black" thickness="2" class="my-8" />
-
-
-        <v-col cols="12" md="6">
-          <h3 class="card-subtitles">Westlands Nightlife</h3>
-          <p class="tribe-description">
-            Add nightlife description here.
-          </p>
-        </v-col>
-
-        <v-col cols="12" md="6">
-          <v-carousel
-            height="500"
-            show-arrows
-            class="rounded-lg elevation-2"
-            hide-delimiter-background
-            cycle interval="3000" pause-on-hover
-          >
-            <v-carousel-item src='public/destinations/westlands/night-1.jpg'/>
-            <v-carousel-item src='public/destinations/westlands/night-2.jpg'/>
-            <v-carousel-item src='public/destinations/westlands/night-3.jpg'/>
+          <v-carousel height="520" show-arrows cycle interval="4500" class="rounded-xl elevation-20">
+            <v-carousel-item src="public/lakes/naivasha1.jpg" cover />
+            <v-carousel-item src="public/lakes/naivasha2.jpg" cover />
+            <v-carousel-item src="public/lakes/naivasha3.jpg" cover />
           </v-carousel>
         </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="card-subtitles text-teal-900">3. Lake Naivasha – The Breathing Heart</h3>
+          <p class="tribe-description">
+            Kenya’s only freshwater Rift Valley lake. <br>
+            Hippos own the night. Fish eagles own the day. <br>
+            Crescent Island — walk among giraffes with no fence between you and freedom. <br>
+            Joy Adamson wrote “Born Free” here. Some places still remember.
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider thickness="4" color="#00838f" class="my-12" />
 
+      <!-- 4. Lake Baringo & Elementaita -->
+      <v-row class="d-flex align-center my-16">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/lakes/baringo-elementaita.jpg" class="rounded-xl elevation-20" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="card-subtitles text-cyan-900">4. Baringo & Elementaita – Twin Jewels</h3>
+          <p class="tribe-description">
+            Baringo — 500 bird species, crocodile islands, Njemps fishermen who sing to hippos. <br>
+            Elementaita — mirror-still water at dawn, pelicans in perfect formation. <br>
+            Both fed by underground rivers older than humanity. <br>
+            Here, water remembers everything.
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider thickness="4" color="#00838f" class="my-12" />
+
+      <!-- 5. Lake Magadi – The Black Diamond -->
+      <v-row class="d-flex align-center my-16">
+        <v-col cols="12" md="6">
+          <v-img src="public/lakes/magadi.jpg" class="rounded-xl elevation-20" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="card-subtitles text-purple-900">5. Lake Magadi – The Final Frontier</h3>
+          <p class="tribe-description">
+            Kenya’s hottest, saltiest, most extreme lake. <br>
+            Black volcanic water. White salt islands. 50°C soda crusts. <br>
+            Flamingos breed here when every other lake fails. <br>
+            The Maasai say this is where the first fire cooled.
+          </p>
+        </v-col>
       </v-row>
 
-      <br/>
+      <!-- FINAL MESSAGE – Same poetic soul -->
+      <div class="my-20 text-center">
+        <h2 class="display-1 font-weight-black mb-8" style="color:#004d40; text-decoration: underline;">
+          This Is Not Water
+        </h2>
+        <p class="text-h5 font-italic mb-10" style="color:#006064; max-width: 900px; margin: 0 auto; line-height: 2;">
+          "In Kenya’s lakes, you do not watch the sky.<br>
+          The sky watches you."
+        </p>
 
-      <!-- ----------------------------------------------------------- -->
-      <!-- QUOTE -->
-      <!-- ----------------------------------------------------------- -->
+        <v-btn
+          size="x-large"
+          color="#00838f"
+          dark
+          class="rounded-pill px-12 text-h6 font-weight-bold"
+          href="https://wa.me/254722000000?text=I want to see Kenya’s flamingo lakes and sacred waters – guide me"
+          target="_blank"
+        >
+          <v-icon left>mdi-whatsapp</v-icon>
+          Take Me to the Mirrors
+        </v-btn>
 
-      <p 
-        style="
-          font-style: italic;
-          font-size: 2em;
-          line-height: 3em;
-          text-decoration: underline;
-        "
-      >
-        "Every journey leads to discovery — from tranquil lakes to the city that never sleeps."
-      </p>
-
-      <br/>
-
-      <!-- ----------------------------------------------------------- -->
-      <!-- CALL TO ACTION -->
-      <!-- ----------------------------------------------------------- -->
-
-      <h2 class="title"
-          style="color: black;text-decoration: underline;text-align: left;">
-        Experience Kenya
-      </h2>
-
-      <p class="text" style=" font-size: 1.2rem">
-        Explore Kenya’s natural beauty and vibrant city life. Book hotels, plan safaris,
-        and discover everything this country has to offer.
-      </p>
-
-      <p style="text-align: center; font-size: 1.2rem;">
-        <router-link to="/hotels">Click here!</router-link> to book your stay and start your adventure.
-      </p>
-
-      <br/><br/>
-
-      <p style="font-size: 2em;text-align: center;">
-        Karibu Kenya — We Love You All!
-      </p>
-
+        <p class="mt-16 text-h4 font-italic" style="color:#004d40;">
+          Karibu Ziwa — Welcome to the Water
+        </p>
+      </div>
     </v-container>
-  </div>
 
-  <!-- ----------------------------------------------------------- -->
-  <!-- FOOTER -->
-  <!-- ----------------------------------------------------------- -->
-
-  <div class="footer">
-    <p>© 2025 SafariGuide</p>
-    <div class="contact">
-      <h3>For Assistance Contact Us On :</h3>
-      <p> +254 113268956 | +254 723075680</p>
-      <p> safariguide@gmail.com</p>
+    <!-- FOOTER – Same warm, grounded style -->
+    <div class="footer">
+      <p>© 2025 Safari Guide Kenya</p>
+      <div class="contact">
+        <h3>For Lake & Wetland Journeys:</h3>
+        <p>+254 722 000 000 | +254 723 075 680</p>
+        <p>lakes@safariguide.co.ke</p>
+      </div>
+      <p class="highlight">
+        Some places don’t reflect light.<br>
+        They reflect souls.
+      </p>
     </div>
-    <p>Your next great adventure begins here.</p>
-    <p class="highlight">Karibu Kenya.</p>
   </div>
 </template>
 
 <style scoped>
-.text{
-  font-size: 1.65em;
-}
-.page {
-  background-color: #f5f5dc;
+.lakes-page {
+  background: linear-gradient(to bottom, #e0f7fa, #b2ebf2, #80deea, #4dd0e1);
   min-height: 100vh;
 }
 
-.nema {
+.hero {
   position: relative;
-  background-image: url("/destinations/cultures/degleex-ganzorig-0kIbj3yEvOM-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 30vh;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)), url('public/lakes/hero.jpg') center/cover no-repeat fixed;
+  height: 55vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.nema::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  text-align: center;
+  color: white;
 }
 
 .title {
-  position: relative;
-  z-index: 2;
-  color: azure;
-  font-weight: bolder;
-  text-align: center;
+  font-size: 5.5rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  text-shadow: 6px 6px 30px rgba(0,0,0,0.9);
+}
+
+.subtitle {
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  margin-top: 1rem;
+  opacity: 0.95;
 }
 
 .card-subtitles {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 2.9rem;
+  font-weight: 900;
   text-align: center;
+  margin-bottom: 1.8rem;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.3);
 }
 
 .tribe-description {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  padding: 1%;
-}
-.footer {
-  background: linear-gradient(135deg, #e6f4ea, #d0f0d9);
-  color: #1b5e20;
-  width: 100%;
-  border-top: 2px solid #1b5e20;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-family: sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.3;
+  background: rgba(255,255,255,0.92);
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+  border-left: 8px solid #00838f;
+  font-family: 'Georgia', serif;
 }
 
-.footer p {
-  margin: 0.3rem 0;
+.footer {
+  background: linear-gradient(135deg, #004d40, #006064, #00838f, #00acc1);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+.footer .contact {
+  margin: 2rem 0;
+  font-size: 1.3rem;
 }
 
 .footer .highlight {
-  font-size: 1.5em;
+  font-size: 2.2rem;
   font-weight: bold;
+  margin-top: 2.5rem;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  line-height: 1.6;
 }
 
-.footer .contact p {
-  margin: 0.2rem 0;
-  font-size: 1rem;
-  font-weight: 500;
+@media (max-width: 960px) {
+  .title { font-size: 3.8rem; letter-spacing: 6px; }
+  .card-subtitles { font-size: 2.3rem; }
+  .tribe-description { padding: 2rem; font-size: 1.25rem; }
 }
-
-
 </style>
-
-<!-- <v-col  cols="12" md="6" >
-        
-          <h2 style="text-align: center;text-decoration: underline;">1. Lions - The Kings of the Savannah</h2>
-         
-          <p style="font-size: 1.3em;">
-            Lions, often called the “kings of the savannah,” are iconic symbols of strength, courage, and majesty. These
-            magnificent big cats are known for their social nature, living in groups called prides that showcase complex
-            family bonds and teamwork. Male lions, with their majestic manes, patrol and protect the territory, while
-            lionesses are skilled hunters, working together to provide for the pride.
-            Lions play a crucial role in maintaining the balance of their ecosystem, regulating prey populations and
-            ensuring the health of the grasslands. Observing a lion in the wild is an awe-inspiring experience — from
-            their powerful roar echoing across the plains to their graceful yet powerful movements while hunting or
-            resting under the shade of acacia trees.
-            Conservation efforts are vital to protect these iconic creatures, as their numbers face threats from habitat
-            loss, human-wildlife conflict, and poaching. By visiting responsible wildlife reserves and supporting
-            eco-tourism, travelers can contribute to the survival of lions and experience the thrill of seeing these
-            magnificent predators in their natural habitat.  </p>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex">
-        <v-carousel cycle interval="2000" pause-on-hover>
-            <v-carousel-item
-              src="public/destinations/wildlifesafaris/lions/ramon-vloon-_t99u7ktTnU-unsplash.jpg"></v-carousel-item>
-            <v-carousel-item
-              src="public/destinations/wildlifesafaris/lions/michael-starkie-7nRiGv33d2g-unsplash.jpg"></v-carousel-item>
-            <v-carousel-item
-              src="public/destinations/wildlifesafaris/lions/jeff-lemond-bwr9XpsYK98-unsplash.jpg"></v-carousel-item>
-          </v-carousel> 
-            </v-col><v-spacer></v-spacer>
-            <v-col cols="12" md="6" class="d-flex">
-              <h1></h1>
-            </v-col>-->
-
-
-
-         
