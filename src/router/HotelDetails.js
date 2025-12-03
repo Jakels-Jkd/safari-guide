@@ -6,7 +6,24 @@ export const Hotels = [
           price: "65,000 / night",
           rating: 4.9 ,
           image: "public/Hotels/hemmingways/Hemingways-hotel-exterior.jpg"
-        },
+ },
+        
+{
+id: 81,
+          name: "Hyatt place Nairobi",
+          location: "westlands, Nairobi, Kenya",
+          price: "65,000 / night",
+          rating: 4.9 ,
+          image: "public/Hotels/hemmingways/Hemingways-hotel-exterior.jpg"
+},
+{
+id: 80,
+          name: "Hyatt regency Nairobi",
+          location: "westlands, Nairobi, Kenya",
+          price: "65,000 / night",
+          rating: 4.9 ,
+          image: "public/Hotels/hemmingways/Hemingways-hotel-exterior.jpg"
+},
         {
           id: 2,
           name: "Diani Reef Resort",

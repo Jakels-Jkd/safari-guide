@@ -1,176 +1,253 @@
-<template>
-  <v-container fluid class="pa-0 bg-blue-50 min-h-screen">
-    <section class="relative w-full h-[85vh] overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-        alt="Beach"
-        class="w-full h-full object-cover"
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20 flex flex-col justify-center items-center text-center px-4"
-      >
-        <h1 class="text-white text-5xl md:text-7xl font-bold drop-shadow-lg">
-          Explore Kenya's Marine & Beach Wonders
-        </h1>
-        <p class="text-white text-lg md:text-2xl mt-4 max-w-3xl drop-shadow-md">
-          From turquoise waters and vibrant coral reefs to serene beaches and cultural coastal towns, Kenya's marine destinations are perfect for adventure, relaxation, and unforgettable memories.
-        </p>
-        <v-btn color="cyan lighten-4" class="mt-6 px-8 py-4 rounded-xl text-lg font-semibold">
-          Discover More
-        </v-btn>
-      </div>
-    </section>
+<!-- src/views/HomeView.vue or pages/MarineBeach.vue -->
+<script setup>
+import { ref, onMounted } from 'vue'
 
-    <!-- Highlights Section -->
-    <section class="py-20 px-6 md:px-16 bg-blue-100">
-      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
-        Top Destinations
-      </h2>
-      <p class="text-center text-blue-700 mb-16 max-w-3xl mx-auto">
-        Our curated selection of Kenya's most breathtaking marine and beach spots, featuring idyllic sands, rich marine life, and cultural experiences.
-      </p>
-      <v-row dense>
-        <v-col cols="12" md="4" v-for="dest in destinations" :key="dest.title">
-          <v-card class="rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
-            <v-img :src="dest.image" height="220px" />
-            <v-card-title class="text-xl font-semibold text-blue-900">{{ dest.title }}</v-card-title>
-            <v-card-text>{{ dest.caption }}</v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </section>
+// Fix 1: Properly define refs as null initially
+const fadeElements = ref([])
 
-    <!-- Activities Section -->
-    <section class="py-20 px-6 md:px-16">
-      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">
-        Activities & Adventures
-      </h2>
-      <p class="text-center text-blue-700 mb-16 max-w-3xl mx-auto">
-        Dive into thrilling water sports, cultural tours, and wildlife encounters. There's something for every explorer.
-      </p>
-      <v-row dense>
-        <v-col cols="12" md="3" v-for="activity in activities" :key="activity.title">
-          <v-card class="p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl transition">
-            <v-icon size="48" color="blue-darken-2">{{ activity.icon }}</v-icon>
-            <h3 class="text-xl font-semibold mt-4 text-blue-900">{{ activity.title }}</h3>
-            <p class="mt-2 text-blue-700">{{ activity.description }}</p>
-          </v-card>
-        </v-col>
-      </v-row>
-    </section>
+// Fix 2: Data
+const features = [
+  { icon: 'mdi-waves', title: 'Pristine Beaches', desc: 'Untouched white sands and turquoise waters' },
+  { icon: 'mdi-diving-scuba', title: 'World-Class Diving', desc: 'Coral reefs, shipwrecks & marine life' },
+  { icon: 'mdi-leaf', title: 'Eco-Friendly', desc: 'Sustainable tourism that protects oceans' },
+  { icon: 'mdi-shield-sun', title: 'Safe & Guided', desc: 'Expert local guides & safety first' }
+]
 
-    <!-- Marine Life Section -->
-    <section class="py-20 px-6 md:px-16 bg-blue-50">
-      <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">
-        Rich Marine Life
-      </h2>
-      <p class="text-center text-blue-700 mb-16 max-w-3xl mx-auto">
-        Kenya's waters are home to colorful coral reefs, dolphins, sea turtles, and a variety of fish species. Experience snorkeling and diving like never before.
-      </p>
-      <v-row dense>
-        <v-col cols="12" md="4" v-for="life in marineLife" :key="life.name">
-          <v-card class="rounded-2xl shadow-lg hover:shadow-2xl transition">
-            <v-img :src="life.image" height="200px" />
-            <v-card-title class="text-lg font-semibold text-blue-900">{{ life.name }}</v-card-title>
-            <v-card-text>{{ life.caption }}</v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-20 px-6 md:px-16 bg-white">
-      <h2 class="text-4xl font-bold text-center text-blue-900 mb-6">
-        Connect With Us
-      </h2>
-      <p class="text-center text-blue-700 max-w-2xl mx-auto mb-10">
-        Promote your beach resorts, tour packages, or marine services. Let us help you reach thousands of tourism enthusiasts.
-      </p>
-      <div class="max-w-xl mx-auto">
-        <v-text-field label="Your Name" variant="outlined" class="mb-4" />
-        <v-text-field label="Email" variant="outlined" class="mb-4" />
-        <v-textarea label="Message" variant="outlined" rows="5" class="mb-4" />
-        <v-btn color="blue-darken-2" class="w-full py-4 rounded-xl text-lg" elevation="4">
-          Send Message
-        </v-btn>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white text-center py-6 text-lg">
-      © 2025 Marine & Beach Tourism – Experience, Explore, Enjoy
-    </footer>
-  </v-container>
-</template>
-
-<script>
-export default {
-  name: "MarineBeachTourism",
-  data() {
-    return {
-      destinations: [
-        {
-          title: "Diani Beach",
-          image: "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
-          caption: "White sands, crystal-clear waters, and vibrant beach resorts perfect for relaxation and adventure."
-        },
-        {
-          title: "Watamu Marine Park",
-          image: "https://images.unsplash.com/photo-1526481280695-3c720685208b",
-          caption: "Explore coral gardens, sea turtles, and some of the clearest waters on the East African coast."
-        },
-        {
-          title: "Lamu Archipelago",
-          image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-          caption: "A cultural and marine paradise with dhow rides, historical charm, and serene beaches."
-        }
-      ],
-      activities: [
-        {
-          icon: "mdi-snorkel",
-          title: "Snorkeling",
-          description: "Experience vibrant coral reefs and marine life up close."
-        },
-        {
-          icon: "mdi-fish",
-          title: "Dolphin Watching",
-          description: "Watch playful dolphins glide through turquoise waters."
-        },
-        {
-          icon: "mdi-sail-boat",
-          title: "Dhow Sailing",
-          description: "Enjoy traditional dhow rides at sunset along the coastline."
-        },
-        {
-          icon: "mdi-surfing",
-          title: "Water Sports",
-          description: "Surfing, jet skiing, kitesurfing — adventure for thrill seekers."
-        }
-      ],
-      marineLife: [
-        {
-          name: "Coral Reefs",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-          caption: "Dive into vibrant underwater ecosystems full of life."
-        },
-        {
-          name: "Sea Turtles",
-          image: "https://images.unsplash.com/photo-1542486070-0cc4f1a1e3c3",
-          caption: "Encounter these gentle creatures in their natural habitat."
-        },
-        {
-          name: "Tropical Fish",
-          image: "https://images.unsplash.com/photo-1502920917128-1aa500764b2c",
-          caption: "Colorful and diverse fish species that will take your breath away."
-        }
-      ]
-    };
+const destinations = [
+  {
+    name: 'Maldives Atolls',
+    tagline: 'Overwater villas & manta rays',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&h=600&fit=crop',
+    rating: 4.9,
+    reviews: 1240
+  },
+  {
+    name: 'Zanzibar Coast',
+    tagline: 'Spice islands & dolphin tours',
+    image: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&h=600&fit=crop',
+    rating: 4.8,
+    reviews: 892
+  },
+  {
+    name: 'Great Barrier Reef',
+    tagline: 'The world’s largest coral ecosystem',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600&fit=crop',
+    rating: 5.0,
+    reviews: 2103
   }
-};
+]
+
+// Fix 3: Animation on scroll (safe version)
+onMounted(() => {
+  const elements = document.querySelectorAll('.animate-on-scroll')
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated')
+      }
+    })
+  }, { threshold: 0.1 })
+
+  elements.forEach(el => observer.observe(el))
+})
 </script>
 
+<template>
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <v-parallax
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2400&h=1600&fit=crop"
+      height="100vh"
+    >
+      <div class="hero-overlay"></div>
+      
+      <v-container class="fill-height d-flex align-center justify-center text-center">
+        <div class="hero-content pa-4">
+          <h1 class="text-h3 text-md-h2 text-lg-h1 font-weight-bold text-white mb-4 mb-md-6">
+            Discover the Ocean's Soul
+          </h1>
+          <p class="text-h6 text-md-h5 text-white mb-8 max-w-3xl mx-auto opacity-90">
+            Pristine beaches • Crystal lagoons • Underwater wonders • Sustainable marine adventures
+          </p>
+          
+          <div class="d-flex flex-column flex-sm-row gap-4 justify-center">
+            <v-btn
+              size="x-large"
+              color="#00bcd4"
+              class="rounded-xl px-8"
+              to="/destinations"
+            >
+              Explore Destinations
+            </v-btn>
+            <v-btn
+              size="x-large"
+              color="white"
+              variant="outlined"
+              class="rounded-xl px-8"
+              to="/tours"
+            >
+              Book Your Dive
+            </v-btn>
+          </div>
+        </div>
+      </v-container>
+
+      <!-- Animated Waves -->
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+    </v-parallax>
+  </div>
+
+  <!-- FEATURES -->
+  <v-container class="py-16">
+    <v-row class="animate-on-scroll">
+      <v-col v-for="feature in features" :key="feature.title" cols="12" sm="6" md="3">
+        <v-card
+          class="text-center pa-8 h-100 rounded-xl feature-card"
+          elevation="12"
+          color="blue-grey-lighten-5"
+        >
+          <v-icon :icon="feature.icon" size="64" color="#00bcd4" class="mb-4"></v-icon>
+          <h3 class="text-h5 font-weight-bold mb-3">{{ feature.title }}</h3>
+          <p class="text-body-1">{{ feature.desc }}</p>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+
+  <!-- DESTINATIONS -->
+  <div class="destinations-section py-16">
+    <v-container>
+      <div class="text-center mb-12">
+        <h2 class="text-h3 font-weight-bold text-white mb-4">Paradise Awaits</h2>
+        <p class="text-h6 text-white opacity-90">Handpicked marine destinations</p>
+      </div>
+
+      <v-row>
+        <v-col v-for="(dest, i) in destinations" :key="i" cols="12" md="4">
+          <v-card class="destination-card rounded-xl overflow-hidden h-100" elevation="16">
+            <v-img
+              :src="dest.image"
+              height="320"
+              cover
+              class="destination-img"
+            >
+              <div class="gradient-overlay"></div>
+              <div class="pa-6 text-white">
+                <h3 class="text-h4 font-weight-bold">{{ dest.name }}</h3>
+                <p class="text-h6 opacity-90">{{ dest.tagline }}</p>
+              </div>
+            </v-img>
+
+            <v-card-text class="pt-6">
+              <div class="d-flex align-center mb-4">
+                <v-rating
+                  :model-value="dest.rating"
+                  color="yellow-darken-3"
+                  density="compact"
+                  size="small"
+                  readonly
+                />
+                <span class="ml-2 text-caption opacity-70">{{ dest.rating }} ({{ dest.reviews }})</span>
+              </div>
+              <v-btn block color="#00bcd4" size="large" class="rounded-lg">
+                Explore {{ dest.name.split(' ')[0] }}
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section py-16 text-center">
+    <v-container>
+      <h2 class="text-h3 font-weight-bold text-white mb-6">
+        Ready to Dive Into Paradise?
+      </h2>
+      <p class="text-h5 text-white mb-10 max-w-3xl mx-auto opacity-90">
+        Join thousands of ocean lovers on their perfect marine adventure.
+      </p>
+      <v-btn
+        size="x-large"
+        color="white"
+        class="px-12 rounded-xl"
+        to="/register"
+      >
+        Start Your Journey
+      </v-btn>
+    </v-container>
+  </div>
+</template>
+
 <style scoped>
-.bg-blue-50 {
-  background-color: #e0f7ff;
+.hero-section {
+  position: relative;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,188,212,0.4));
+  z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; }
+
+/* Animated Waves */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 180px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V60C300,20 900,100 1200,60V0Z" fill="%23ffffff33"/></svg>') repeat-x;
+  animation: wave 15s linear infinite;
+}
+.wave1 { animation-duration: 15s; opacity: 0.5; }
+.wave2 { animation-duration: 20s; opacity: 0.3; bottom: 20px; }
+.wave3 { animation-duration: 25s; opacity: 0.2; bottom: 40px; }
+@keyframes wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Background Sections */
+.destinations-section {
+  background: linear-gradient(135deg, #006064 0%, #00bcd4 100%);
+}
+.cta-section {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+              url('https://images.unsplash.com/photo-1519046902490-7e04cd90ad25?w=2400') center/cover;
+}
+
+/* Card Effects */
+.feature-card, .destination-card {
+  transition: all 0.4s ease;
+}
+.feature-card:hover, .destination-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25) !important;
+}
+.destination-img {
+  transition: transform 0.6s ease;
+}
+.destination-card:hover .destination-img {
+  transform: scale(1.1);
+}
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.9));
+}
+
+/* Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

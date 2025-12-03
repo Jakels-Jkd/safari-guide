@@ -1,40 +1,22 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from 'vue'
 
-const router = useRouter();
+const user = ref("")
 
-const isLoggedIn = ref(false);
-const user = ref(null);
-
-// CHECK LOGIN STATUS
-onMounted(() => {
-  const token = localStorage.getItem("token");
-  const storedUser = localStorage.getItem("user");
-
-  if (token && storedUser) {
-    isLoggedIn.value = true;
-    user.value = JSON.parse(storedUser);
-  }
-});
-
-// LOGOUT FUNCTION
-const logout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
-
-  isLoggedIn.value = false;
-
-  router.push("/login");
-};
+const initials = user.value
+  .split(' ')
+  .map(name => name[0])
+  .join('')
+  .toUpperCase()
+  .slice(0, 2)
 </script>
 
 <template>
-  <v-app-bar elevate-on-scroll style="background-color: rgb(242, 223, 223);">
-    
+  <v-app-bar elevate-on-scroll color="#f2dfdf" height="64">
+      
     <div class="logo-title">
       <v-img
-        src="/icon/tourism.png"
+        src="public/icon/tourism.png"
         width="40"
         height="40"
         class="logo-img"
@@ -42,37 +24,26 @@ const logout = () => {
       />
       <span class="app-title">| Safari Guide</span>
     </div>
+    <v-spacer />
 
-    <v-spacer></v-spacer>
-
-    <v-btn variant="plain" color="black" to="/">Home</v-btn>
-    <v-btn variant="plain" color="black" to="/destinations">Destinations</v-btn>
-    <v-btn variant="plain" color="black" to="/hotels">Hotels</v-btn>
-    <v-btn variant="plain" color="black" to="/tourcompanies">Tour Companies</v-btn>
-    <v-btn variant="plain" color="black" to="/travelblog">Travel Blog</v-btn>
-    <v-btn variant="plain" color="black" to="/conservation">Conservation</v-btn>
-    <v-btn variant="plain" color="black" to="/faqs">FAQs</v-btn>
-
-    <!-- SHOW LOGIN IF NOT LOGGED IN -->
-    <v-btn 
-      v-if="!isLoggedIn"
-      variant="plain"
-      color="black"
-      to="/login"
-    >
-      Log In
-    </v-btn>
-
-    <!-- SHOW AVATAR + LOGOUT IF LOGGED IN -->
-    <div v-else style="display: flex; align-items: center; gap: 10px;">
-      <v-avatar to="/userprofile">
-        <span style="color: darkmagenta;">
-          {{ user?.name?.charAt(0)?.toUpperCase() || "U" }}
-        </span>
-      </v-avatar>
-
-      <v-btn variant="plain" color="red" @click="logout">Logout</v-btn>
+    
+    <div class="hidden-sm-and-down"> 
+      <v-btn variant="plain" color="black" to="/">Home</v-btn>
+      <v-btn variant="plain" color="black" to="/destinations">Destinations</v-btn>
+      <v-btn variant="plain" color="black" to="/hotels">Hotels</v-btn>
+      <v-btn variant="plain" color="black" to="/tourcompanies">Tour Companies</v-btn>
+      <v-btn variant="plain" color="black" to="/travelblog">Travel Blog</v-btn>
+      <v-btn variant="plain" color="black" to="/contactus">Contact us</v-btn>
+      <v-btn variant="plain" color="black" to="/faqs">FAQs</v-btn>
     </div>
+
+    <v-btn variant="plain" color="black" to="/login" class="mx-2">Log In</v-btn>
+
+    <v-avatar color="primary" size="40" class="ml-3">
+      <span class="white--text text-h6">{{ initials }}</span>
+    </v-avatar>
+
+    <v-app-bar-nav-icon class="hidden-md-and-up" />
   </v-app-bar>
 </template>
 
@@ -80,18 +51,25 @@ const logout = () => {
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-left: 16px; 
+  gap: 12px;
+  margin-left: 8px;
 }
 
 .logo-img {
-  min-width: 40px;
-  min-height: 40px;
+  border-radius: 8px;
 }
 
 .app-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.v-btn_before {
+  background-color: transparent;
+}
+.v-btn_hover-before {
+  opacity: 0.08;
 }
 </style>

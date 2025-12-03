@@ -3,310 +3,298 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div class="page">
-    <div class="page2">
-      <h2 class="title">Kenya’s Historical Sites</h2>
+  <div class="history-page">
+
+    <!-- HERO – same emotional style you fell in love with -->
+    <div class="nema">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Kenya’s Historical Sites</h1>
+        <p class="hero-subtitle">Where Every Stone Tells a Story</p>
+      </div>
     </div>
 
-    <v-container class="py-10 px-6 text-center">
-      <h1 class="display-2 font-weight-bold" style="text-decoration: underline;">
-        Step into the Past and Explore Kenya’s Heritage
+    <v-container class="py-16 px-6 max-w-7xl">
+      <h1 class="display-1 text-center font-weight-black mb-16 text-amber-900">
+        <span class="underline-elegant">Step Back in Time with Kenya’s Living Heritage</span>
       </h1>
-      <p class="intro">
-        Kenya is home to rich history spanning centuries — from ancient ruins and colonial forts 
-        to sacred landmarks and museums. Discover the stories that shaped the nation.
-      </p>
-    </v-container>
-           <!--fort-->
-    <v-container class="py-10 px-6">
-      <v-row class="d-flex align-center">
+
+      <!-- 1. Fort Jesus – Mombasa -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
         <v-col cols="12" md="6">
-          <v-carousel height="400" cycle interval="3000" show-arrows hide-delimiter-background>
-            <v-carousel-item src="" />
-            <v-carousel-item src="" />
+          <v-carousel height="520" cycle interval="4500" show-arrows hide-delimiter-background class="rounded-xl shadow-2xl">
+            <v-carousel-item src="public/history/fort-jesus1.jpg" />
+            <v-carousel-item src="public/history/fort-jesus2.jpg" />
+            <v-carousel-item src="public/history/fort-jesus3.jpg" />
           </v-carousel>
         </v-col>
         <v-col cols="12" md="6">
-          <h3 class="site-title">1.The Fort-Jesus.</h3>
-          <p class="site-desc">
-             Built by the Portuguese in 1593, Fort Jesus stands proudly on Mombasa Island as a symbol of Kenya’s coastal history.<br/>
-             It was constructed to protect Portuguese interests along the Indian Ocean trade routes and later fell under Omani Arab and British control.<br/>
-             The fort’s coral-stone walls, old cannons, and strategic design reflect centuries of cultural exchange and conflict. <br/>
-             Inside, the Fort Jesus Museum displays artifacts from Swahili civilization, trade relics, and maritime history. 
-             Recognized as a UNESCO World Heritage Site, it remains one of Kenya’s most visited attractions, offering panoramic views of the ocean and a deep glimpse into the past.<br/>
-             Step inside, and let the past sweep you off your feet!
+          <h3 class="tribe-title">1. Fort Jesus – Mombasa</h3>
+          <p class="tribe-text">
+            Built by the Portuguese in 1593 to guard the Old Port of Mombasa.<br>
+            For centuries it changed hands between Portuguese, Omani Arabs and British — a fortress soaked in blood, faith and trade.<br>
+            Today a UNESCO World Heritage Site, its coral walls still whisper tales of cannons, slaves and Swahili queens.
+            <em>Stand on the battlements at sunset — the Indian Ocean remembers everything.</em>
           </p>
         </v-col>
-        
-                      <!--Gedi Ruins – Kilifi-->
-        <div class="divider"></div>
-           <v-col cols="12" md="6">
-          <h3 class="site-title">2. Gedi Ruins – Kilifi</h3>
-          <p class="site-desc">
-               Tucked away in a lush forest near Watamu, the Gedi Ruins tell the haunting story of an advanced Swahili city that mysteriously vanished around the 17th century.<br/>
-                Built entirely from coral stone, this ancient town once boasted winding streets, elegant mosques, royal palaces, and grand houses equipped with indoor plumbing — a marvel for its time.<br/>
-               As you wander through the quiet pathways lined with moss-covered walls, you can almost hear the whispers of merchants, scholars, and sailors who once made Gedi a center of trade and culture.<br/>
-                Surrounded by towering baobabs and the songs of birds, Gedi remains one of Kenya’s most captivating windows into a forgotten era.<br/>
-               A lost city. A living mystery. A timeless whisper from the past.
-
-          </p>
-             </v-col>
-        <v-col cols="12" md="6">
-          <v-img src="" height="400" cover />
-        </v-col>
-        <v-col cols="12" md="6">
-        </v-col>
-
-        <!--Lamu Old Town – Lamu Island-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-         <v-img src=""/>
-        </v-col>
-        
-        <v-col cols="12" md="6">
-          <h3 class="site-title">3. Lamu Old Town – Lamu Island</h3>
-          <p class="site-desc">
-            Nestled along Kenya’s northern coast, Lamu Old Town is the oldest continuously inhabited Swahili settlement in East Africa and a UNESCO World Heritage Site.<br/>
-             Its narrow winding streets, intricately carved wooden doors, and whitewashed coral stone buildings tell stories of centuries of trade and cultural fusion between Africa, Arabia, India, and Europe.<br/>
-           Donkeys replace cars, dhows sail silently across turquoise waters, and the air carries a timeless calm — a glimpse into a world where life moves to the rhythm of the ocean and tradition.<br/>
-           Lamu isn’t just a town — it’s a living memory of the Swahili soul.
-          </p>
-        </v-col>
-        
-
-        <!--4. Hell’s Gate National Park – Naivasha-->
-        <v-col cols="12" md="6">
-          <h3 class="site-title">4. Hell’s Gate National Park – Naivasha</h3>
-          <p class="site-desc">
-              Hell’s Gate is one of Kenya’s most dramatic landscapes, filled with towering cliffs, deep gorges, and geothermal steam vents.
-               It inspired the setting for Disney’s The Lion King and remains a playground for adventure seekers.<br/>
-              Visitors can hike, cycle among zebras, or climb the iconic Fischer’s Tower. The park also holds cultural significance, with the Maasai living nearby and sharing their traditions.<br/>
-             Hell’s Gate isn’t just a park — it’s nature’s cathedral, carved by fire and wind.
-          </p>
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-img src=""/>
-        </v-col>
-
-        <!--5. Karen Blixen Museum – Nairobi-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-          <v-carousel height="400" cycle interval="3000" show-arrows hide-delimiter-background>
-            <v-carousel-item src="" />
-            <v-carousel-item src="" />
-          </v-carousel>
-        </v-col>
-        <v-col cols="12" md="6">
-          <h3 class="site-title">5. Karen Blixen Museum – Nairobi</h3>
-          <p class="site-desc">
-            Once home to the Danish author Karen Blixen, famous for her memoir Out of Africa, this museum offers a nostalgic glimpse into Kenya’s colonial past.<br/>
-             Nestled at the foot of the Ngong Hills, the farmhouse still preserves her furniture, books, and vintage photos.
-            It’s a serene spot that tells the story of adventure, love, and resilience — a perfect blend of history and beauty.<br/>
-             A visit here lets you step into the pages of history and feel the spirit of Kenya’s past come alive.<br/>
-             Standing on her veranda, you can almost hear the whisper — “I had a farm in Africa at the foot of the Ngong Hills.”
-          </p>
-        </v-col>
-
-        <!--6. Nairobi National Museum – Nairobi-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-          <h3 class="site-title">6. Nairobi National Museum – Nairobi</h3>
-          <p class="site-desc">
-           Nestled near the city’s bustling center, the Nairobi National Museum is a treasure trove of Kenya’s heritage.<br/>
-           From prehistoric fossils to vibrant Maasai beadwork, the museum showcases the country’s natural and cultural history under one roof.<br/>
-           Wander through its art galleries, botanical gardens, and wildlife exhibits, and you’ll gain a deeper appreciation for Kenya’s journey through time.<br/>
-           A visit here is like flipping through the storybook of the nation, where every exhibit whispers tales of resilience, creativity, and life.<br/>
-           Step inside and let Kenya’s history inspire your own adventure!
-          </p>
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-img src=""/>
-        </v-col>
-
-        <!--7. Ngong Hills – Nairobi-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-          <v-carousel height="400" cycle interval="3000" show-arrows hide-delimiter-background>
-            <v-carousel-item src="" />
-            <v-carousel-item src="" />
-          </v-carousel>
-        </v-col>
-        <v-col cols="12" md="6">
-          <h3 class="site-title">7. Ngong Hills – Nairobi</h3>
-          <p class="site-desc">
-           The Ngong Hills offer sweeping vistas of the Great Rift Valley and Nairobi’s outskirts.
-           Once a retreat for the Maasai, the hills are now a favorite hiking and biking destination.
-           Fresh air, rolling green slopes, and panoramic views make it perfect for adventure and reflection.<br/>
-           The trails are dotted with wind-swept peaks and picnic spots — ideal for both relaxation and exploration.<br/>
-           Breathe in Kenya’s beauty and let the hills inspire your spirit!
-          </p>
-        </v-col>
-
-          <!--8. Shimoni Slave Caves – Kwale-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-          <v-carousel height="400" cycle interval="3000" show-arrows hide-delimiter-background>
-            <v-carousel-item src="" />
-            <v-carousel-item src="" />
-          </v-carousel>
-        </v-col>
-        <v-col cols="12" md="6">
-          <h3 class="site-title">8. Shimoni Slave Caves – Kwale</h3>
-          <p class="site-desc">
-          Nestled along the Kenyan coast near Shimoni, these caves are a solemn reminder of the dark history of the East African slave trade.
-           Carved into the cliffside centuries ago, the caves served as holding cells for enslaved Africans awaiting shipment to Arab and European traders.
-         Walking through the narrow, shadowed passageways, it’s impossible not to feel the weight of history — the whispers of countless lives torn from their families echo through the stone walls. <br/>
-         Today, the caves stand as a historical site and memorial, preserving the memory of those who suffered while educating visitors about resilience, freedom, and humanity.<br/>
-         A visit here is both humbling and eye-opening, connecting the present with a past that must never be forgotten.<br/>
-         In the silence of these caves, the echoes of courage speak louder than time.
-          </p>
-        </v-col>
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-          <h3 class="site-title">9. Rhino Ark – Aberdare Ranges</h3>
-          <p class="site-desc">
-           The Rhino Ark is not just a conservation marvel but also a historical landmark reflecting Kenya’s dedication to wildlife preservation.<br/>
-            Winding through the Aberdare Ranges, this massive fence was constructed to protect the endangered black rhino from poaching while also safeguarding local communities.<br/>
-            Traversing the rolling hills, forests, and ridges along the fence route, visitors experience both breathtaking landscapes and a deep sense of Kenya’s conservation history.<br/>
-             Beyond its environmental impact, Rhino Ark tells the story of collaboration, perseverance, and the human commitment to safeguarding nature.<br/>
-             Where history meets the wild, the rhino stands as a sentinel of time.
-          </p>
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-carousel height="400" cycle interval="3000" show-arrows hide-delimiter-background>
-            <v-carousel-item src="" />
-            <v-carousel-item src="" />
-          </v-carousel>
-        </v-col>
-
-        <!--10. Nyeri Baden-Powell Museum – Nyeri-->
-        <div class="divider"></div>
-        <v-col cols="12" md="6">
-        <v-img src=""/>
-        </v-col>
-        <v-col cols="12" md="6">
-               <h3 class="site-title">10. Nyeri Baden-Powell Museum – Nyeri</h3>
-          <p class="site-desc">
-             Located in the central highlands of Kenya, the Nyeri Museum celebrates the life and legacy of Robert Baden-Powell, the founder of the global Scouting movement.<br/> 
-             Housed in a colonial-era building, the museum preserves personal artifacts, photographs, and memorabilia that tell the story of scouting’s origins in Kenya.<br/>
-             Visitors can explore exhibits on Baden-Powell’s adventures, his connections to the Kenyan highlands, and the growth of scouting worldwide. 
-             The museum also highlights Kenya’s colonial history, providing a window into early 20th-century life.
-             Walking through the museum feels like stepping back into an era where adventure, leadership, and community shaped a movement that continues to inspire youth globally.<br/>
-          </p>
-          </v-col>
       </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 2. Gedi Ruins – Kilifi -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/history/gedi.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="tribe-title">2. Gedi Ruins – Kilifi</h3>
+          <p class="tribe-text">
+            A lost Swahili city swallowed by jungle in the 17th century.<br>
+            Palaces, mosques, tombs and even flushing toilets — all built from coral stone centuries before Europe had them.<br>
+            Walk silently under giant baobabs and feel the ghosts of merchants and scholars still lingering in the air.
+            <em>One of the world’s greatest archaeological mysteries — and it’s all yours.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 3. Lamu Old Town -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6">
+          <v-img src="public/history/lamu.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="tribe-title">3. Lamu Old Town – Lamu Island</h3>
+          <p class="tribe-text">
+            The oldest continually inhabited town in East Africa — UNESCO World Heritage Site since 2001.<br>
+            No cars. Only donkeys, dhows, carved doors and the sound of the muezzin at dawn.<br>
+            Time stopped here centuries ago — and decided to stay.
+            <em>Walk the narrow streets and feel 800 years of Swahili civilisation breathing around you.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+       4. Hell’s Gate National Park – Naivasha
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6" order-md="2">
+          <v-carousel height="520" cycle interval="4000" show-arrows class="rounded-xl shadow-2xl">
+            <v-carousel-item src="public/history/hells-gate1.jpg" />
+            <v-carousel-item src="public/history/hells-gate2.jpg" />
+          </v-carousel>
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="tribe-title">4. Hell’s Gate National Park – Naivasha</h3>
+          <p class="tribe-text">
+            Towering red cliffs, geothermal steam vents and gorges that inspired The Lion King.<br>
+            The only park in Kenya where you can walk or cycle among zebra and giraffe.<br>
+            Maasai legends say the dramatic landscape was created when the earth split in anger.
+            <em>Feel the raw power of the Rift Valley under your feet.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 5. Karen Blixen Museum – Nairobi -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6">
+          <v-img src="public/history/karen-blixen.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="tribe-title">5. Karen Blixen Museum – Nairobi</h3>
+          <p class="tribe-text">
+            “I had a farm in Africa, at the foot of the Ngong Hills…”<br>
+            Step into the real house of the author of Out of Africa. Her piano, books and coffee dryer are exactly where she left them.<br>
+            The garden still blooms, lions still roar in the distance at night.
+            <em>Time travel in a single afternoon.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 6. Nairobi National Museum -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/history/nairobi-museum.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="tribe-title">6. Nairobi National Museum</h3>
+          <p class="tribe-text">
+            The cradle of humankind exhibits, Joy Adamson’s paintings, 900 stuffed birds, and the original Hominid Vault.<br>
+            From Turkana Boy to Maasai shields — Kenya’s entire story under one roof.
+            <em>Leave knowing why the world calls us the cradle of mankind.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 7. Ngong Hills -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6">
+          <v-carousel height="520" cycle interval="4000" show-arrows class="rounded-xl shadow-2xl">
+            <v-carousel-item src="public/history/ngong1.jpg" />
+            <v-carousel-item src="public/history/ngong2.jpg" />
+          </v-carousel>
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="tribe-title">7. Ngong Hills – Nairobi</h3>
+          <p class="tribe-text">
+            The “Knuckles of God” that Karen Blixen immortalised.<br>
+            Hike the seven hills with Maasai guides, visit the wind turbines, and watch the sun set over the Rift Valley.<br>
+            On a clear day you can see Mount Kenya and Kilimanjaro at the same time.
+            <em>This is where heaven touches Kenya.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 8. Shimoni Slave Caves – Kwale -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/history/shimoni.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="tribe-title">8. Shimoni Slave Caves – Kwale</h3>
+          <p class="tribe-text">
+            Dark coral caverns where thousands of enslaved Africans were held before being shipped across the Indian Ocean.<br>
+            Chains still hang from the walls. The silence is heavy with memory.<br>
+            Today it is a place of reflection, remembrance and healing.
+            <em>Some histories must be felt, not just read.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 9. Rhino Ark – Aberdare Ranges -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6">
+          <v-img src="public/history/rhino-ark.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3 class="tribe-title">9. Rhino Ark – Aberdare Ranges</h3>
+          <p class="tribe-text">
+            The world’s longest wildlife fence — 400 km built by hand to protect the last mountain bongo and black rhinos.<br>
+            A living monument to Kenyan conservation spirit and community willpower.
+            <em>Where man and nature chose to coexist.</em>
+          </p>
+        </v-col>
+      </v-row>
+      <v-divider class="custom-divider" />
+
+      <!-- 10. Baden-Powell Museum – Nyeri -->
+      <v-row class="mb-16 align-center culture-entry fade-in">
+        <v-col cols="12" md="6" order-md="2">
+          <v-img src="public/history/baden-powell.jpg" class="rounded-xl shadow-2xl" height="520" cover />
+        </v-col>
+        <v-col cols="12" md="6" order-md="1">
+          <h3 class="tribe-title">10. Baden-Powell Museum – Nyeri</h3>
+          <p class="tribe-text">
+            The final home of Lord Robert Baden-Powell, founder of the Scout Movement.<br>
+            His cottage, medals, drawings and the grave that faces Mount Kenya (as he requested) remain exactly as he left them.<br>
+            More than 50 million scouts worldwide owe their promise to this quiet garden.
+            <em>“Look wide, and even when you think you are looking wide — look wider still.”</em>
+          </p>
+        </v-col>
+      </v-row>
+
+      <!-- FINAL MESSAGE -->
+      <div class="final-section py-20 text-center">
+        <h2 class="final-title">Kenya Doesn’t Just Have History —<br>It <span class="text-amber-700">Is</span> History</h2>
+        <p class="final-quote">
+          “Every footstep you take on this soil<br>
+          is walking on the shoulders of giants,<br>
+          kings, warriors, poets, and dreamers.”
+        </p>
+        <v-btn
+          size="x-large"
+          color="amber darken-3"
+          dark
+          class="mt-12 rounded-pill px-16 text-h5 font-weight-bold"
+          :to="{ name: 'Hotels' }"
+        >
+          Plan Your Heritage Journey
+        </v-btn>
+        <p class="karibu mt-16">Karibu Kenya • The Past is Calling</p>
+      </div>
     </v-container>
 
-    <div class="summary">
-      <h2>Preserving Kenya’s Heritage</h2>
-      <p>
-        These historical landmarks remind us of Kenya’s deep roots and diverse past. 
-        Protecting them ensures that future generations can continue to learn, connect, 
-        and celebrate our shared identity.
-      </p>
-      <p class="cta">
-        Click <router-link to="/hotels" class="link">here</router-link> to book a room and 
-        create your lifetime experience.
-      </p>
-    </div>
-
-    <div class="footer">
-      <p> +254 113268956 | +254 723075680</p>
-      <p> safariguide@gmail.com</p>
-      <p>Your next great adventure begins here.</p>
-      <p class="highlight">Karibu Kenya.</p>
-    </div>
+    <!-- FOOTER – same as Cultures page -->
+    <footer class="culture-footer">
+      <p class="text-h6">© 2025 Safari Guide Kenya — Preserving Yesterday for Tomorrow</p>
+      <div class="contact">
+        <p>+254 113 268 956 • +254 723 075 680</p>
+        <p class="email">history@safariguide.co.ke</p>
+      </div>
+      <p class="highlight">Harambee – Building the Future on Ancient Foundations</p>
+    </footer>
   </div>
 </template>
 
+<!-- EXACT SAME BEAUTIFUL STYLE FROM THE CULTURES PAGE -->
 <style scoped>
-.page {
-  background-color: #F5F1E6;
+.history-page {
+  background: linear-gradient(to bottom, #fffaf0, #fdfd96 5%, #f5f5dc 95%);
   min-height: 100vh;
+  font-family: 'Georgia', serif;
 }
 
-.page2 {
+.nema {
   position: relative;
-  background-image: url("/public/destinations/pravin-wakode-bhDb6Gd0BVw-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 30vh;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+              url('public/history/hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.title {
-  position: relative;
-  z-index: 2;
-  color: azure;
-  font-size: 3em;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.intro {
-  font-size: 1.3rem;
-  color: #333;
-  margin-top: 1rem;
-}
-
-.site-title {
-  font-size: 1.8rem;
-  font-weight: bold;
   text-align: center;
+  color: white;
 }
 
-.site-desc {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  padding: 1rem;
+.overlay { position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(0,0,0,0.8)); }
+
+.hero-title { font-size: 6.rem; font-weight: 900; letter-spacing: 4px; text-shadow: 4px 4px 20px rgba(0,0,0,0.8); }
+.hero-subtitle { font-size: 2.2rem; font-weight: 300; letter-spacing: 8px; margin-top: 1rem; opacity: 0.95; }
+
+.underline-elegant { position: relative; display: inline-block; padding-bottom: 12px; }
+.underline-elegant::after {
+  content: ''; position: absolute; left: 50%; bottom: 0;
+  width: 180px; height: 5px; background: linear-gradient(90deg, transparent, #c19a6b, transparent);
+  transform: translateX(-50%); border-radius: 3px;
 }
 
-.divider {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  margin: 40px 0;
+.tribe-title {
+  font-size: 2.8rem; font-weight: 900; color: #8B4513; text-align: center;
+  margin-bottom: 1.5rem; text-shadow: 1px 1px 8px rgba(0,0,0,0.1);
 }
 
-.summary {
-  text-align: center;
-  padding: 2rem;
-  background-color: #E8E5D7;
+.tribe-text {
+  font-size: 1.35rem; line-height: 2.2; background: rgba(255,255,255,0.92);
+  padding: 2.5rem; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px); border: 1px solid rgba(139,69,19,0.15);
 }
 
-.summary h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+.tribe-text em { display: block; margin-top: 1.5rem; font-size: 1.2rem; color: #8B4513; font-style: italic; }
+
+.custom-divider {
+  height: 4px; background: linear-gradient(90deg, transparent, #DEB887, transparent);
+  border: none; margin: 4rem 0;
 }
 
-.summary .cta .link {
-  color: #1b5e20;
-  text-decoration: underline;
-  font-weight: 600;
-}
+.fade-in { opacity: 0; animation: fadeInUp 0.9s ease-out forwards; transform: translateY(40px); }
+.culture-entry:nth-child(2) { animation-delay: 0.2s; }
+.culture-entry:nth-child(4) { animation-delay: 0.4s; }
+/* add more delays if you want */
 
-.footer {
-  background: linear-gradient(135deg, #e6f4ea, #c8e6c9);
-  color: #1b5e20;
-  width: 100%;
-  border-top: 2px solid #81c784;
-  text-align: center;
-  padding: 1rem;
-}
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-.footer .highlight {
-  font-size: 1.5em;
-  font-weight: bold;
+.final-section { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,248,220,0.9)); border-radius: 30px; padding: 5rem 2rem; margin: 6rem 0; }
+.final-title { font-size: 4.2rem; color: #654321; }
+.final-quote { font-size: 2.1rem; font-style: italic; color: #8B4513; line-height: 2.2; }
+
+.karibu { font-size: 3rem; font-weight: bold; color: #8B4513; font-style: italic; }
+
+.culture-footer {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+  color: white; padding: 5rem 2rem; text-align: center; font-family: 'Georgia', serif;
 }
-</style>
+.highlight { font-size: 2.2rem; font-weight: bold; margin-top: 2rem; color: #fff59d; }
+</style>                                                      `1  `

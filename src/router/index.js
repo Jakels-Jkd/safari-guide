@@ -5,6 +5,7 @@ import Destinations from "@/components/Destinations.vue";
 import Hotels from "@/components/Hotels.vue";          
 import HotelItems from "@/views/HotelItems.vue";  
 import TourCompanies from "@/components/TourCompanies.vue";
+import TourCompaniesDetails from "@/views/TourCompaniesDetails.vue";
 import SignUp from "@/components/SignUp.vue";
 import LogIn from "@/components/LogIn.vue";
 import UserProfile from "@/components/UserProfile.vue";
@@ -15,10 +16,13 @@ import NatureScenicTourism from "@/views/NatureScenicTourism.vue";
 import FAQs from "@/components/FAQs.vue";
 import TravelBlog from "@/components/TravelBlog.vue";
 import lakesWestlands from "@/views/LakesWestlands.vue";
-import Conservation from "@/components/Conservation.vue";
+import ContactUs from "@/components/ContactUs.vue";
 import Bookings from "@/components/booking.vue";
 import MarineBeachTourism from "@/views/MarineBeachTourism.vue";
 import Admin from "@/views/Admin.vue";
+import DesertTourism from "@/views/DesertTourism.vue";
+import WaterSports from "@/views/waterSports.vue";
+import ForestTourism from "@/views/ForestTourism.vue";
 
 const routes = [
   {
@@ -40,6 +44,17 @@ const routes = [
     name     : "HotelItems",
     path     : "/hotels/:id",
     component: HotelItems,
+    props    : true
+  },
+  {
+    name     : "TourCompanies",
+    path     : "/tourcompanies",
+    component: TourCompanies
+  },
+  {
+    name     : "TourCompaniesDetails",
+    path     : "/tourcompanies/:id",
+    component: TourCompaniesDetails,
     props    : true
   },
   {
@@ -73,11 +88,6 @@ const routes = [
     component: HistoricalSites
   },
   {
-    name     : "TourCompanies",
-    path     : "/tourcompanies",
-    component: TourCompanies
-  },
-  {
     name     : "WildlifeSafaris",
     path     : "/wildlifesafaris",
     component: WildlifeSafaris
@@ -103,9 +113,9 @@ const routes = [
     component: lakesWestlands
   },
   {
-    name     : "Conservation",
-    path     : "/conservation",
-    component: Conservation
+    name     : "Contact Us",
+    path     : "/contactus",
+    component: ContactUs
   },
   {
     name     : "Bookings",
@@ -116,6 +126,21 @@ const routes = [
     name     : "Admin",
     path     : "/admin",
     component: Admin
+  },
+  {
+    name     : "DesertTourism",
+    path     : "/deserttourism",
+    component: DesertTourism
+  },
+  {
+    name:'waterSports',
+    path:'/watersports',
+    component:WaterSports
+  },
+  {
+    name:'forestTourism',
+    path:'/forestsandnaturereserves',
+    component:ForestTourism
   }
 
 ];

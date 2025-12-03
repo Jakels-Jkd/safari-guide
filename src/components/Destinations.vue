@@ -1,235 +1,310 @@
 <script setup>
-import { ref } from 'vue'
-
-const searchQuery = ref('')
+const destinations = [
+  { number: "01", 
+    title: "Wildlife & Safaris",           
+    img: "public/CoverImages/laela-OHM88hDgNZ4-unsplash.jpg",           
+    link: "/wildlifesafaris" 
+  },
+  { number: "02",
+    title: "Marine & Beach Paradise",     
+    img: "public/CoverImages/marine.png",                                
+    link: "/marinebeachtourism" 
+  },
+  { number: "03",  
+    title: "Nature & Scenic Beauty",      
+    img: "public/CoverImages/thomas-bennie-1jlJrr4XGkU-unsplash (1).jpg", 
+    link: "/naturescenictourism" 
+  },
+  { number: "04",
+   title: "Kenyan Cultures",             
+   img: "public/CoverImages/brian-kungu-kr4A0_7JhSc-unsplash.jpg",     
+   link: "/cultures" 
+  },
+  { number: "05", 
+    title: "Historical Sites",           
+    img: "public/CoverImages/pravin-wakode-bhDb6Gd0BVw-unsplash.jpg",    
+    link: "/historicalsites" 
+  },
+  { number: "06",
+    title: "Adventure & Extreme Sports",  
+    img: "public/CoverImages/frantisek-duris-7j-aTZwAB7s-unsplash.jpg",  
+    link: "/adventureoutdooractivities" 
+  },
+  { number: "07", 
+    title: "Lakes & Wetlands",            
+    img: "public/CoverImages/bibhash-polygon-cafe-banerjee-3QPNiZ_Nqjs-unsplash.jpg", 
+    link: "/lakeswestlands" 
+  },
+  { number: "08", 
+    title: "Forests & Nature Reserves",   
+    img: "public/CoverImages/man-a-stylist-uQa4DN8HAb0-unsplash.jpg",   
+    link: "/forestsandnaturereserves" 
+  },
+  { number: "09",  
+    title: "Desert Expeditions",         
+    img: "public/CoverImages/youhana-nassif-yv3NsDUFK7g-unsplash.jpg",  
+    link: "/deserttourism" 
+  },
+  { number: "10",
+    title: "Water Sports & Rapids",        
+    img: "public/CoverImages/watersportinsagana.png",                    
+    link: "/watersportinsagana" 
+  },
+  { number: "11",  
+   title: "Spiritual & Eco Tourism",      
+   img: "public/CoverImages/ecotourism.png",                            
+   link: "/ecotourism" 
+  },
+]
 </script>
 
 <template>
-  <div class="page">
-    <v-container fluid class="aimee">
-      <v-row>
-        <v-col class="container">
-          <v-img src="public/destinations/christopher-ford-lA-9wH3AlYY-unsplash.jpg" height="60vh" cover class="imag">
-            <v-card-title class="heading">Tour Kenya:The heart of Africa</v-card-title>
-            <v-card-text style="font-size: 1.5em; 
-          text-align: center;
-           color: aliceblue;">welcome to kenya...Hakuna matata!.</v-card-text>
-          </v-img>
+  <div class="home-page">
+
+    <div >
+      <v-img 
+        src="public/CoverImages/christopher-ford-lA-9wH3AlYY-unsplash.jpg" 
+        height="70vh" 
+        cover 
+      >
+        <div class="overlay"></div>
+        <div class="content">
+          <h1 class="title">Tour Kenya</h1>
+          <p class="subtitle">The Heart & Soul of Africa</p>
+          <p class="tagline">Welcome Home... Hakuna Matata!</p>
+          <v-btn 
+            size="x-large" 
+            color="white" 
+            class="mt-10 rounded-pill px-12 text-black font-weight-bold text-h5"
+            variant="flat"
+          >
+            Begin Your Journey
+          </v-btn>
+        </div>
+      </v-img>
+    </div>
+
+    <v-container class="py-16 text-center">
+      <h1 class="welcome-title">Welcome to the Land of Endless Wonder</h1>
+      <p class="welcome-text">
+        From thundering wildebeest migrations to coral reefs glowing under turquoise waves,<br>
+        from ancient Swahili cities to snow-capped mountains rising from the equator —<br>
+        <strong>Kenya doesn’t just host adventures. Kenya is the adventure.</strong>
+      </p>
+      <h2 class="memory-line">Here, We Don’t Just Visit — We Create Memories That Last Forever</h2>
+    </v-container>
+
+    <div class="karibu-section">
+      <h1 class="karibu-title">KARIBU</h1>
+      <h1 class="karibu-title shadow">KARIBU KENYA</h1>
+    </div>
+
+    <v-container class="py-12">
+      <v-row class="justify-center">
+        <v-col cols="12" sm="6" md="4" lg="3" v-for="(destinations, i) in destinations" :key="i">
+          <router-link :to="destinations.link" class="text-decoration-none">
+            <v-card class="dest-card rounded-xl overflow-hidden" elevation="12">
+              <div class="card-image-wrapper">
+                <v-img :src="destinations.img" height="320" cover class="card-img" />
+                <div class="card-overlay"></div>
+                <div class="card-label">
+                  <span class="number">{{ destinations.number }}</span>
+                  <h3 class="label-text">{{ destinations.title }}</h3>
+                </div>
+              </div>
+            </v-card>
+          </router-link>
         </v-col>
       </v-row>
     </v-container>
-    <h1></h1>
-    <br></br>
-    <v-container>
-      <h1 style="text-align: center;"><b>welcome and experience kenya from inland tours to all the way to the
-          marines.</b></h1>
-      <p style="font-size: 1.2em;">Discover breathtaking destinations that bring nature, culture, and adventure
-        together. Explore top spots, hidden gems, and eco-friendly experiences that make every journey
-        unforgettable.</p>
 
-    <br></br>
-      <h2 style="text-align: center;"><b>Kenya we create memories.</b></h2>
-      <br></br>
+    <v-container class="text-center py-16">
+      <h1 class="final-title">Explore • Experience • Embrace Kenya</h1>
+      <p class="final-text">
+        Golden savannahs. Whispering deserts. Turquoise oceans. Snow on the equator.<br>
+        44 tribes. One heartbeat. This is not a country — this is a feeling.
+      </p>
+
+      <v-carousel 
+        cycle ="1500"
+        height="500" 
+        hide-delimiter-background 
+        show-arrows="hover"
+        class="rounded-xl shadow-2xl mt-12"
+      >
+        <v-carousel-item src="public/destinations/d2/finaldestination.png" cover />
+        <v-carousel-item src="public/destinations/d2/finaldestination2.png" cover />
+        <v-carousel-item src="public/destinations/d2/finaldestination3.png" cover />
+        <v-carousel-item src="public/destinations/d2/destination3 (1).png" cover />
+        <v-carousel-item src="public/destinations/d2/destination3 (2).png" cover />
+        <v-carousel-item src="public/destinations/d2/destination3 (3).png" cover />
+        <v-carousel-item src="public/destinations/d2/destination3 (4).png" cover />
+        <v-carousel-item src="public/destinations/destinations2/Screenshot 2025-10-19 235253.png" cover />
+      </v-carousel>
+
+      <v-btn 
+        size="x-large" 
+        color="orange darken-3" 
+        dark 
+        class="mt-12 rounded-pill px-16 text-h5 font-weight-bold"
+        to="/hotels"
+      >
+        Book Your Dream Safari Now
+      </v-btn>
     </v-container>
-    <h1 style="font-size: 2em;
-         color: black;
-         text-decoration:underline;
-         text-align: center; ">Welcome & Explore Kenya </h1>
-    <h1 style="font-size: 2em;
-         color: black;
-         text-decoration:underline;
-         text-align: center; "> Karibu</h1>
-    <br></br>
-    <v-container>
 
-      <v-row class="no-gutters justify-center">
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-           <router-link to="/wildlifesafaris"> <v-img src="public/destinations/laela-OHM88hDgNZ4-unsplash.jpg" height="300px" cover /></router-link>
-            <V-text class="image-texts">1. Wildlife & Safaris</V-text>
-
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-           <RouterLink to="/marinebeachtourism"> <v-img src="public/destinations/marine.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">2. Marine and beach tourism</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-          <RouterLink to="/naturescenictourism" ><v-img src="public/destinations/thomas-bennie-1jlJrr4XGkU-unsplash (1).jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">3. Nature & scenic Tourism</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-            <RouterLink to="/cultures"><v-img src="public/destinations/brian-kungu-kr4A0_7JhSc-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">4. Kenyan cultures</V-text>
-          </v-card>
-        </v-col> 
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-            <RouterLink to="/historicalsites"><v-img src="public/destinations/pravin-wakode-bhDb6Gd0BVw-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">5. Historical Sites & Monuments</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-            <RouterLink to="/adventureoutdooractivities"><v-img src="public/destinations/frantisek-duris-7j-aTZwAB7s-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">6. Adventure & Outdoor Activities (includes adventure sports)</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-            <RouterLink to="/lakeswestlands"><v-img src="public/destinations/bibhash-polygon-cafe-banerjee-3QPNiZ_Nqjs-unsplash.jpg" height="300px"
-                cover /></RouterLink>
-            <V-text class="image-texts">7. Lakes(inland islands) & Wetlands</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-          <RouterLink to="/forestsandnaturereserves"><v-img src="public/destinations/man-a-stylist-uQa4DN8HAb0-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">8. Forest & Nature Reserves</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-            <RouterLink to="/desertandsemiaridregions"><v-img src="public/destinations/youhana-nassif-yv3NsDUFK7g-unsplash.jpg" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">9. Desert tourism</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-           <RouterLink to="/watersportinsagana"><v-img src="public/destinations/watersportinsagana.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">10.Water Sports & Rapids</V-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card class="image-card">
-           <RouterLink to="/ecotourism"><v-img src="public/destinations/ecotourism.png" height="300px" cover /></RouterLink>
-            <V-text class="image-texts">11. Spiritual & Eco Tourism</V-text>
-          </v-card>
-        </v-col>
-      </v-row>
-
-    </v-container>
-    <v-container>
-      <v-row>
-        <h1 style="text-align: center; text-decoration: underline;">Explore, Experience, and Embrace Kenya!!</h1>
-        <p style="font-size: 1.4em;">From the golden savannahs of the Maasai Mara to the calm shores of Lake Naivasha
-          and the rich cultures of Lamu, Kenya is a destination like no other. Whether you seek adventure, relaxation,
-          or discovery — each corner of this land tells a story waiting for you to explore.
-          Begin your journey today, and experience the magic that makes Kenya truly unforgettable.</p>
-        
-        <v-carousel cycle interval="2000" pause-on-hover>
-          <v-carousel-item src="public/destinations/finaldestination.png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/finaldestination2.png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/finaldestination3.png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/destination3 (1).png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/destination3 (2).png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/destination3 (3).png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/destination3 (4).png"></v-carousel-item>
-          <v-carousel-item src="public/destinations/destinations2/Screenshot 2025-10-19 235253.png"></v-carousel-item>
-        </v-carousel>
-      </v-row>
-    </v-container>
-  </div>
-
-  <div class="destinations-footer">
-    <p style="text-align: center;">2025 @safariguide
-      <br></br>
-      From the rolling plains of the Maasai Mara to the tranquil beaches of Diani,
-      Kenya invites you to explore, connect, and create memories that last a lifetime.
-    </p>
-    <P style="text-align: center;">
-      Your next great adventure begins here.
-    </p>
-    <P style="text-align: center; font-size: 1.5em;">Karibu Kenya.</P>
+    <footer class="footer1">
+      <p class="footer-main">© 2025 Safari Guide Kenya — Made with Love for the Motherland</p>
+      <p>Your journey begins the moment you say “Karibu”</p>
+      <p class="karibu-final">KARIBU KENYA • TWAWAPENDA SANA</p>
+    </footer>
   </div>
 </template>
 
+
+
 <style scoped>
-.page {
-  background-color: color-mix(in srgb-linear, color percentage, color percentage);
-  background-size: cover;
-
+.home-page {
+  background: linear-gradient(to bottom, #fdfbfb, #e6d9c2 70%);
+  overflow-x: hidden;
 }
 
-.container {
-  background-position: center;
-  background-size: cover;
-  height: 50vh;
-  width: 100%;
-
+.overlay {
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 30%, rgba(0,0,0,0.4));
 }
-
-.imag {
-  width: 100%;
-  padding: 0%;
-}
-
-.heading {
-  color: aliceblue;
-  text-decoration: underline;
-  text-decoration-color: azure;
-  font-size: 4em;
-  text-align: center;
-
-}
-
-.aimee {
-  padding: 0%;
-
-}
-
-.search {
-  width: 50%;
-  max-width: 100%;
-  background-color: rgb(254, 254, 254);
-  justify-self: center;
-
-  opacity: var(170%);
-  border-radius: 60px;
-  height: 4.5em;
-  white-space: initial;
-
-}
-
-.new {
-  width: 500px;
-
-}
-
-.image-texts {
-  color: aliceblue;
+.content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
-  font-size: 1.5em;
+  color: white;
+  width: 90%;
+}
+.title {
+  font-size: 7rem;
+  font-weight: 900;
+  letter-spacing: 8px;
+  line-height: 1;
+}
+.subtitle {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 12px;
+  margin-top: 1rem;
+}
+.tagline {
+  font-size: 2.8rem;
+  font-style: italic;
+  margin-top: 2rem;
+  opacity: 0.95;
 }
 
-.image-card {
-  margin: 0 12px;
+.welcome-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #8B4513;
+}
+.welcome-text {
+  font-size: 1.6rem;
+  color: #5D4037;
+  line-height: 2;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+.memory-line {
+  font-size: 2.8rem;
+  color: #D2691E;
+  font-style: italic;
+  margin-top: 3rem;
 }
 
-.destinations-footer {
-  background: linear-gradient(135deg, #e6f4ea, #c8e6c9);
-  color: #1b5e20;
-  width: 100%;
-  border-top: 2px solid #81c784;
-  height: 15vh;
+.karibu-section {
+  text-align: center;
+  padding: 6rem 0;
+  background: linear-gradient(rgba(255,248,220,0.6), rgba(240,230,200,0.8));
+  position: relative;
+  overflow: hidden;
+}
+.karibu-title {
+  font-size: 9rem;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: #B8860B;
+  text-shadow: 8px 8px 30px rgba(184,134,11,0.4);
+}
+.karibu-title.shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(139,69,19,0.15);
+  z-index: -1;
 }
 
-.image-card {
-  transition: 0.3s;
+.dest-card {
+  position: relative;
+  transition: all 0.4s ease;
+  border: 3px solid transparent;
+}
+.dest-card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(139,69,19,0.35) !important;
+  border-color: #FFD700;
+}
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.7));
+}
+.card-label {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+.number {
+  font-size: 1.8rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+.label-text {
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 3px 3px 10px black;
 }
 
-.image-card:hover {
-  transform: scale(1.03);
-  z-index: 1;
+.final-title {
+  font-size: 4.5rem;
+  color: #8B0000;
+  text-shadow: 3px 3px 20px rgba(139,0,0,0.3);
+}
+.final-text {
+  font-size: 1.7rem;
+  color: #654321;
+  line-height: 2.2;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.footer1 {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32, #388e3c, #4caf50);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  font-family: Georgia, serif;
+}
+.footer-main {
+   font-size: 1.4rem;
+   margin-bottom: 1rem; }
+.karibu-final {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #fff59d;
+  text-shadow: 4px 4px 15px rgba(0,0,0,0.6);
 }
 </style>
