@@ -1,4 +1,3 @@
-<!-- src/views/LakesWetlands.vue — DESIGN 1: POETIC EARTH (Same soul as Desert & Forests) -->
 <script setup>
 import { ref } from 'vue'
 </script>
@@ -6,7 +5,6 @@ import { ref } from 'vue'
 <template>
   <div class="lakes-page">
 
-    <!-- HERO – Same sacred energy -->
     <div class="hero">
       <h2 class="title">LAKES & WETLANDS OF KENYA</h2>
       <p class="subtitle">Where the Sky Comes Down to Drink</p>
@@ -17,7 +15,6 @@ import { ref } from 'vue'
         Mirrors of Heaven on Earth
       </h1>
 
-      <!-- 1. Lake Nakuru -->
       <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6">
           <v-carousel height="520" show-arrows cycle interval="4500" hide-delimiter-background class="rounded-xl elevation-20">
@@ -38,7 +35,6 @@ import { ref } from 'vue'
       </v-row>
       <v-divider thickness="4" color="#00838f" class="my-12" />
 
-      <!-- 2. Lake Bogoria -->
       <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6" order-md="2">
           <v-img src="public/lakes/bogoria.jpg" class="rounded-xl elevation-20" height="520" cover />
@@ -55,7 +51,6 @@ import { ref } from 'vue'
       </v-row>
       <v-divider thickness="4" color="#00838f" class="my-12" />
 
-      <!-- 3. Lake Naivasha -->
       <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6">
           <v-carousel height="520" show-arrows cycle interval="4500" class="rounded-xl elevation-20">
@@ -76,7 +71,6 @@ import { ref } from 'vue'
       </v-row>
       <v-divider thickness="4" color="#00838f" class="my-12" />
 
-      <!-- 4. Lake Baringo & Elementaita -->
       <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6" order-md="2">
           <v-img src="public/lakes/baringo-elementaita.jpg" class="rounded-xl elevation-20" height="520" cover />
@@ -93,7 +87,6 @@ import { ref } from 'vue'
       </v-row>
       <v-divider thickness="4" color="#00838f" class="my-12" />
 
-      <!-- 5. Lake Magadi – The Black Diamond -->
       <v-row class="d-flex align-center my-16">
         <v-col cols="12" md="6">
           <v-img src="public/lakes/magadi.jpg" class="rounded-xl elevation-20" height="520" cover />
@@ -109,7 +102,6 @@ import { ref } from 'vue'
         </v-col>
       </v-row>
 
-      <!-- FINAL MESSAGE – Same poetic soul -->
       <div class="my-20 text-center">
         <h2 class="display-1 font-weight-black mb-8" style="color:#004d40; text-decoration: underline;">
           This Is Not Water
@@ -137,7 +129,6 @@ import { ref } from 'vue'
       </div>
     </v-container>
 
-    <!-- FOOTER – Same warm, grounded style -->
     <div class="footer">
       <p>© 2025 Safari Guide Kenya</p>
       <div class="contact">
@@ -227,9 +218,15 @@ import { ref } from 'vue'
   line-height: 1.6;
 }
 
-@media (max-width: 960px) {
-  .title { font-size: 3.8rem; letter-spacing: 6px; }
-  .card-subtitles { font-size: 2.3rem; }
-  .tribe-description { padding: 2rem; font-size: 1.25rem; }
-}
+  .title { 
+    font-size: 3.8rem; 
+    letter-spacing: 6px;
+   }
+  .card-subtitles { 
+    font-size: 2.3rem;
+   }
+  .tribe-description {
+     padding: 2rem;
+      font-size: 1.25rem; }
+
 </style>

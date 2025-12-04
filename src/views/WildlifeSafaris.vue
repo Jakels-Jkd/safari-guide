@@ -1,183 +1,234 @@
-<template>
-  <div class="wildlife-page">
+<script setup>
+import { ref, onMounted } from 'vue'
 
-    <!-- HERO -->
-    <div class="hero">
-      <v-parallax src="https://images.unsplash.com/photo-1516026672721-7b2d8f8c7b8e?w=2400" height="100vh">
-        <div class="overlay"></div>
-        <div class="content text-center text-white">
-          <h1 class="title">Kenya Wildlife & Safaris</h1>
-          <p class="subtitle">Home of the Big Five & Great Migration</p>
-          <v-btn size="x-large" color="amber darken-3" dark class="mt-8 rounded-pill" to="/hotels">
-            Book Your Safari
-          </v-btn>
+const features = [
+  { icon: 'mdi-binoculars', title: 'Big Five Safaris', desc: 'Lion • Leopard • Elephant • Rhino • Buffalo' },
+  { icon: 'mdi-earth', title: 'Great Migration', desc: '1.8 million wildebeest crossing the Mara' },
+  { icon: 'mdi-camera', title: 'World-Class Photography', desc: 'Once-in-a-lifetime wildlife moments' },
+  { icon: 'mdi-account-group', title: 'Private & Small Group', desc: 'No crowds. Just you and the wild' }
+]
+
+const parks = [
+  {
+    name: 'Maasai Mara',
+    tagline: 'The Greatest Wildlife Show on Earth',
+    image: 'public/safari/mara-sunset.jpg',
+    rating: 5.0,
+    reviews: 3421,
+    highlight: 'Great Migration • Big Cats • Balloon Safaris'
+  },
+  {
+    name: 'Amboseli',
+    tagline: 'Kilimanjaro’s Elephant Kingdom',
+    image: 'public/safari/amboseli-elephants.jpg',
+    rating: 4.9,
+    reviews: 1892,
+    highlight: 'Super Tuskers • Snow-Capped Backdrop'
+  },
+  {
+    name: 'Tsavo',
+    tagline: 'Red Dust & Ancient Wilderness',
+    image: 'public/safari/tsavo-red.jpg',
+    rating: 4.8,
+    reviews: 1567,
+    highlight: 'Man-Eaters • Vast Untouched Land'
+  }
+]
+
+
+</script>
+
+<template>
+  <!-- HERO -->
+  <div class="hero-section" style="background-color: palegreen; height: 60vh;">
+    <v-parallax src="public/safari/hero-mara-lions.jpg" height="100vh">
+      <div class="hero-overlay"></div>
+      
+      <v-container class="fill-height d-flex align-center justify-center text-center">
+        <div class="hero-content pa-6">
+          <h1 class="text-h3 text-md-h2 text-lg-h1 font-weight-black text-white mb-6">
+            This Is Not A Safari
+          </h1>
+          <h2 class="text-h4 text-md-h3 text-lg-h2 font-weight-light text-amber-100 mb-10">
+            This Is Kenya Claiming Your Soul
+          </h2>
+          
+          <p class="text-h6 text-md-h5 text-white mb-12 max-w-4xl mx-auto opacity-90 leading-loose">
+            Sunrise game drives • Leopards in golden light • A million hooves thundering • Nights so quiet you hear lions breathe
+          </p>
+          
+          <div class="d-flex flex-column flex-sm-row gap-6 justify-center">
+            <v-btn size="x-large" color="#8B4513" class="rounded-xl px-14 text-h6 font-weight-bold">
+              <v-icon left size="36">mdi-compass-rose</v-icon>
+              Design My Safari
+            </v-btn>
+            <v-btn size="x-large" color="white" variant="outlined" class="rounded-xl px-12 border-2"
+                   href="https://wa.me/254722000000?text=I need the real Kenya safari experience. Call me."
+                   target="_blank">
+              <v-icon left color="white">mdi-whatsapp</v-icon>
+              Speak to Expert
+            </v-btn>
+          </div>
         </div>
-      </v-parallax>
+      </v-container>
+
+      <!-- Animated Grass -->
+      <div class="grass grass1"></div>
+      <div class="grass grass2"></div>
+      <div class="grass grass3"></div>
+    </v-parallax>
+  </div>
+
+  <!-- FEATURES -->
+  <v-container class="py-20">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-h3 font-weight-black mb-4" style="color:#5D2F0A;">
+        Why Safari With Us?
+      </h2>
+      <p class="text-h6 opacity-80">We don’t do tours. We deliver life-changing encounters.</p>
     </div>
 
-    <!-- 1. WILDLIFE SECTION -->
-    <v-container class="py-16">
-      <h2 class="text-center text-h3 font-weight-bold mb-12 text-amber-900">
-        Meet Kenya’s Legendary Wildlife
-      </h2>
+    <v-row class="animate-on-scroll">
+      <v-col v-for="f in features" :key="f.title" cols="12" sm="6" md="3">
+        <v-card class="text-center pa-10 h-100 rounded-2xl feature-card" elevation="16" color="#FAF3E0">
+          <div class="icon-circle mb-6">
+            <v-icon :icon="f.icon" size="80" color="#8B4513"></v-icon>
+          </div>
+          <h3 class="text-h5 font-weight-bold mb-4" style="color:#5D2F0A;">{{ f.title }}</h3>
+          <p class="text-body-1 opacity-85 leading-relaxed">{{ f.desc }}</p>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 
-      <!-- Big Five -->
-      <v-row class="mb-12">
-        <v-col v-for="a in bigFive" :key="a.name" cols="6" sm="4" md="3" lg="2">
-          <v-card class="text-center pa-4 rounded-xl" elevation="8">
-            <v-img :src="a.img" height="180" cover class="rounded-xl mb-3" />
-            <h3 class="text-h6 font-weight-bold">{{ a.name }}</h3>
-            <p class="text-caption grey--text text--darken-2">{{ a.swahili }}</p>
-          </v-card>
-        </v-col>
-      </v-row>
+  <!-- PARKS GRID -->
+  <div class="destinations-section py-20">
+    <v-container>
+      <div class="text-center mb-16">
+        <h2 class="text-h3 font-weight-black text-white mb-4">Legendary Wildlife Kingdoms</h2>
+        <p class="text-h5 text-amber-100 opacity-90">Where Africa still rules</p>
+      </div>
 
-      <!-- Big Cats -->
-      <h3 class="text-center text-h4 mb-6 text-brown-800">Big Cats</h3>
-      <v-row class="mb-12">
-        <v-col v-for="c in bigCats" :key="c.name" cols="12" md="4">
-          <v-card class="rounded-xl overflow-hidden" elevation="12">
-            <v-img :src="c.img" height="300" cover />
-            <div class="pa-4 text-center">
-              <h4 class="text-h5 font-weight-bold">{{ c.name }}</h4>
-              <p class="text-body-2">{{ c.tagline }}</p>
-            </div>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-row class="g-10">
+        <v-col v-for="(p, i) in parks" :key="i" cols="12" md="4">
+          <v-card class="destination-card rounded-2xl overflow-hidden h-100" elevation="20">
+            <v-img :src="p.image" height="400" cover class="destination-img">
+              <div class="gradient-overlay"></div>
+              <div class="pa-8 text-white">
+                <h3 class="text-h4 font-weight-black">{{ p.name }}</h3>
+                <p class="text-h6 opacity-90 mt-2">{{ p.tagline }}</p>
+              </div>
+              <v-chip class="absolute top-4 right-4" color="rgba(255,255,255,0.95)" size="large">
+                <v-icon left color="#5D2F0A">mdi-star</v-icon>
+                {{ p.rating }} ({{ p.reviews }})
+              </v-chip>
+            </v-img>
 
-      <!-- Flora & Birds -->
-      <v-row>
-        <v-col cols="12" md="6">
-          <v-card class="pa-8 text-center" color="green lighten-5" rounded="xl">
-            <v-icon size="70" color="green darken-4" class="mb-4">mdi-bird</v-icon>
-            <h3 class="text-h5 mb-4">Iconic Birds</h3>
-            <v-chip v-for="b in birds" :key="b" class="ma-1" color="green darken-3" dark small>
-              {{ b }}
-            </v-chip>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-card class="pa-8 text-center" color="amber lighten-5" rounded="xl">
-            <v-icon size="70" color="amber darken-4" class="mb-4">mdi-tree</v-icon>
-            <h3 class="text-h5 mb-4">Ancient Trees</h3>
-            <v-chip v-for="t in flora" :key="t" class="ma-1" color="amber darken-3" dark small>
-              {{ t }}
-            </v-chip>
+            <v-card-text class="pt-8 pb-6 bg-grey-lighten-4">
+              <p class="text-body-1 font-italic opacity-80 mb-6">{{ p.highlight }}</p>
+              <v-btn block color="#8B4513" size="x-large" class="rounded-xl text-white">
+                Explore {{ p.name }}
+              </v-btn>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
     </v-container>
+  </div>
 
-    <!-- 2. SAFARIS SECTION -->
-    <div class="safaris-bg py-16">
-      <v-container>
-        <h2 class="text-center text-h3 font-weight-bold mb-12 text-white">
-          Top Safari Destinations
-        </h2>
-
-        <!-- Great Migration Highlight -->
-        <v-card class="mb-12 rounded-3xl overflow-hidden" elevation="20">
-          <v-img src="https://images.unsplash.com/photo-1535930891776-0c2a42a418f9?w=2400" height="500" cover>
-            <div class="text-center text-white pa-10">
-              <h3 class="text-h2 font-weight-black">The Great Migration</h3>
-              <p class="text-h4">2 Million Wildebeest • One Epic Journey</p>
-              <v-btn size="x-large" color="white" class="mt-6 text-black rounded-pill">
-                Witness It Live
-              </v-btn>
-            </div>
-          </v-img>
-        </v-card>
-
-        <!-- Safari Parks Grid -->
-        <v-row>
-          <v-col v-for="(p, i) in safariParks" :key="i" cols="12" md="6" lg="4">
-            <v-card class="h-100 rounded-xl" elevation="12">
-              <v-img :src="p.img" height="250" cover />
-              <v-card-title class="text-h6 font-weight-bold">{{ p.name }}</v-card-title>
-              <v-card-text>{{ p.desc }}</v-card-text>
-              <v-card-actions>
-                <v-chip small color="amber darken-3" dark>{{ p.bestFor }}</v-chip>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-
-    <!-- FINAL CTA -->
-    <div class="text-center py-16 bg-amber-50">
-      <h2 class="text-h3 font-weight-black text-amber-900 mb-6">
-        Ready for Your Safari Adventure?
+  <!-- FINAL CTA -->
+  <div class="cta-section py-24 text-center">
+    <v-container>
+      <h2 class="text-h3 font-weight-black text-white mb-8">
+        The Wild Doesn’t Wait.<br>
+        <span class="text-amber-100" style="font-size:6rem;">Neither Should You.</span>
       </h2>
-      <v-btn size="x-large" color="amber darken-4" dark class="rounded-pill px-12" to="hotels">
-        Start Planning Now
-      </v-btn>
-      <p class="mt-8 text-h4 font-italic text-amber-800">Karibu Kenya</p>
-    </div>
+      <p class="text-h5 text-amber-100 mb-12 max-w-4xl mx-auto opacity-90 leading-loose">
+        One sunrise in the Mara rewrites who you are.<br>
+        One lion’s roar at 3 a.m. reminds you you’re alive.
+      </p>
+      
+      <div class="d-flex flex-column flex-sm-row gap-8 justify-center">
+        <v-btn size="x-large" color="#5D2F0A" class="px-20 py-10 text-h5 font-weight-black rounded-xl"
+               href="https://wa.me/254722000000?text=I’m ready for the authentic Kenyan safari. Let’s make it happen."
+               target="_blank">
+          <v-icon left size="56">mdi-whatsapp</v-icon>
+          I’M READY NOW
+        </v-btn>
+        <v-btn size="x-large" color="transparent" variant="outlined" class="px-16 py-10 text-h5 rounded-xl border-4"
+               style="border-color:#D4AF37; color:#D4AF37;" to="/contact">
+          Get Custom Quote
+        </v-btn>
+      </div>
+
+      <p class="mt-20 text-4xl font-light text-amber-200 opacity-80 tracking-widest">
+        Karibu Nyumbani • Welcome Home
+      </p>
+    </v-container>
   </div>
 </template>
 
-<script setup>
-const bigFive = [
-  { name: 'Lion', swahili: 'Simba', img: 'public/wildlife/lion.jpg' },
-  { name: 'Leopard', swahili: 'Chui', img: 'public/wildlife/leopard.jpg' },
-  { name: 'Elephant', swahili: 'Tembo', img: 'public/wildlife/elephant.jpg' },
-  { name: 'Buffalo', swahili: 'Nyati', img: 'public/wildlife/buffalo.jpg' },
-  { name: 'Rhino', swahili: 'Kifaru', img: 'public/wildlife/rhino.jpg' },
-]
-
-const bigCats = [
-  { name: 'Cheetah', tagline: 'Fastest land animal', img: 'public/wildlife/cheetah.jpg' },
-  { name: 'Serval', tagline: 'Graceful hunter', img: 'public/wildlife/serval.jpg' },
-  { name: 'Caracal', tagline: 'Desert lynx', img: 'public/wildlife/caracal.jpg' },
-]
-
-const birds = ['Lilac-breasted Roller', 'Secretary Bird', 'Ostrich', 'Crowned Crane']
-const flora = ['Acacia', 'Baobab', 'Sausage Tree', 'Fever Tree']
-
-const safariParks = [
-  { name: 'Maasai Mara', desc: 'Great Migration & Big Cats', bestFor: 'Best Overall', img: 'public/parks/mara.jpg' },
-  { name: 'Amboseli', desc: 'Elephants & Mt. Kilimanjaro', bestFor: 'Views', img: 'public/parks/amboseli.jpg' },
-  { name: 'Tsavo', desc: 'Red elephants & vast wilderness', bestFor: 'Adventure', img: 'public/parks/tsavo.jpg' },
-  { name: 'Samburu', desc: 'Rare species & desert beauty', bestFor: 'Unique', img: 'public/parks/samburu.jpg' },
-]
-</script>
-
 <style scoped>
-.wildlife-page {
-  background: #fffaf0;
-  font-family: 'Georgia', serif;
+/* New luxury color palette */
+:root {
+  --primary: #8B4513;      /* Rich saddle brown */
+  --accent: #D4AF37;       /* Real gold */
+  --deep: #5D2F0A;         /* Dark earth */
+  --light-bg: #FAF3E0;     /* Warm ivory */
+  --text-dark: #3E1F0B;
 }
 
-.overlay {
+/* HERO */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(93,47,10,0.7), rgba(139,69,19,0.5));
+}
+
+/* Animated grass – more realistic */
+.grass {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(transparent 40%, rgba(0,0,0,0.8));
+  bottom: 0;
+  width: 200%;
+  height: 220px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V90C300,130 900,50 1200,90V0Z" fill="%238B735522"/></svg>') repeat-x;
+  animation: grass 22s linear infinite;
 }
 
-.content {
-  position: relative;
-  z-index: 2;
-  padding-top: 20vh;
+/* Icon circle – luxury */
+.icon-circle {
+  width: 150px; height: 150px;
+  background: linear-gradient(135deg, #D4AF37, #B8860B);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(139,69,19,0.4);
 }
 
-.title {
-  font-size: 6rem;
-  font-weight: 900;
-  text-shadow: 4px 4px 20px black;
+.destinations-section {
+  background: linear-gradient(135deg, #5D2F0A 0%, #8B4513 50%, #A0522D 100%);
+}
+.cta-section {
+  background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)),
+              url('public/safari/cta-lion-night.jpg') center/cover fixed;
 }
 
-.subtitle {
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 4px;
+.feature-card { background: var(--light-bg) !important; }
+.feature-card:hover, .destination-card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 40px 80px rgba(139,69,19,0.35) !important;
+}
+.destination-img { transition: transform 10s ease; }
+.destination-card:hover .destination-img { transform: scale(1.18); }
+.gradient-overlay {
+  background: linear-gradient(transparent 20%, rgba(93,47,10,0.95));
 }
 
-.safaris-bg {
-  background: linear-gradient(135deg, #1b5e20, #2e7d32);
-  color: white;
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s ease;
 }
-
-h2, h3 { color: #8B4513; }
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

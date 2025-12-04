@@ -2,10 +2,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// Fix 1: Properly define refs as null initially
 const fadeElements = ref([])
 
-// Fix 2: Data
 const features = [
   { icon: 'mdi-waves', title: 'Pristine Beaches', desc: 'Untouched white sands and turquoise waters' },
   { icon: 'mdi-diving-scuba', title: 'World-Class Diving', desc: 'Coral reefs, shipwrecks & marine life' },
@@ -37,7 +35,6 @@ const destinations = [
   }
 ]
 
-// Fix 3: Animation on scroll (safe version)
 onMounted(() => {
   const elements = document.querySelectorAll('.animate-on-scroll')
   const observer = new IntersectionObserver((entries) => {
